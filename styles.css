@@ -824,6 +824,14 @@ li {
     margin-bottom: var(--space-4);
 }
 
+.network-zero-trust-note {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #9a3412;
+    font-weight: 600;
+}
+
 .network-control-btn {
     border: none;
     border-radius: 999px;
