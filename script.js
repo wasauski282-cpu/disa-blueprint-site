@@ -229,7 +229,25 @@
         if (title) title.textContent = detail.title;
         if (subtitle) subtitle.textContent = detail.subtitle;
         if (text) text.textContent = detail.text;
+
+        document.querySelectorAll(".network-hotspot").forEach(function (item) {
+            item.classList.toggle("is-active", item.getAttribute("data-network-detail") === key);
+        });
     };
+
+    document.querySelectorAll(".network-hotspot").forEach(function (item) {
+        item.addEventListener("click", function () {
+            const key = item.getAttribute("data-network-detail");
+            if (key) showNetworkDetail(key);
+        });
+
+        item.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            const key = item.getAttribute("data-network-detail");
+            if (key) showNetworkDetail(key);
+        });
+    });
 
     activateTab("overview");
     showHubDetail("center");

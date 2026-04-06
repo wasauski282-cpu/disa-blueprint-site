@@ -816,14 +816,6 @@ li {
     height: 100%;
     display: block;
 }
-.network-controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: var(--space-4);
-    margin-bottom: var(--space-4);
-}
-
 .network-zero-trust-note {
     margin: 14px 0 0;
     text-align: center;
@@ -832,52 +824,30 @@ li {
     font-weight: 600;
 }
 
-.network-control-btn {
-    border: none;
-    border-radius: 999px;
-    padding: 12px 16px;
-    font-size: 0.92rem;
-    font-weight: 700;
-    color: white;
-    background: var(--primary-dark);
-    box-shadow: var(--shadow-sm);
+.network-interaction-hint {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.network-hotspot {
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.network-control-btn:hover,
-.network-control-btn:focus {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+.network-hotspot .interactive-shape {
+    transition: filter 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;
+}
+
+.network-hotspot:hover .interactive-shape,
+.network-hotspot:focus .interactive-shape,
+.network-hotspot.is-active .interactive-shape {
+    filter: brightness(0.98);
+    stroke-width: 3;
+}
+
+.network-hotspot:focus {
     outline: none;
-}
-
-.network-controls .network-control-btn:nth-child(1) {
-    background: #1a73e8;
-}
-
-.network-controls .network-control-btn:nth-child(2) {
-    background: #8b5e34;
-}
-
-.network-controls .network-control-btn:nth-child(3) {
-    background: #5b43b4;
-}
-
-.network-controls .network-control-btn:nth-child(4) {
-    background: #3c63b0;
-}
-
-.network-controls .network-control-btn:nth-child(5) {
-    background: #475569;
-}
-
-.network-controls .network-control-btn:nth-child(6) {
-    background: #dc2626;
-}
-
-.network-controls .network-control-btn:nth-child(7) {
-    background: #15803d;
 }
 /* OVERVIEW CARD EMPHASIS */
 #overview .feature-card,

@@ -517,107 +517,121 @@
                         <div class="network-visual-wrap">
                             <div class="network-visual">
                                 <svg class="network-svg" viewBox="0 0 1200 880" role="img" aria-label="Layered DISA data center network diagram showing enterprise and cloud edge, inter-site transport, software-defined network fabric, spine-leaf physical fabric, workload zones, zero trust security, and operations visibility">
-                                    <rect x="58" y="234" width="150" height="500" rx="24" fill="#fff3f2" stroke="#dc2626" stroke-width="2"></rect>
-                                    <text x="133" y="282" text-anchor="middle" fill="#b91c1c" font-size="25" font-weight="700">Zero Trust</text>
-                                    <text x="133" y="315" text-anchor="middle" fill="#b91c1c" font-size="19" font-weight="700">Security</text>
-                                    <text x="133" y="402" text-anchor="middle" fill="#5f6368" font-size="18">Identity-based</text>
-                                    <text x="133" y="430" text-anchor="middle" fill="#5f6368" font-size="18">access</text>
-                                    <text x="133" y="505" text-anchor="middle" fill="#5f6368" font-size="18">Microsegmentation</text>
-                                    <text x="133" y="580" text-anchor="middle" fill="#5f6368" font-size="18">Policy</text>
-                                    <text x="133" y="608" text-anchor="middle" fill="#5f6368" font-size="18">enforcement</text>
+                                    <g class="network-hotspot" data-network-detail="security" role="button" tabindex="0" aria-label="Show zero trust security details">
+                                        <rect class="interactive-shape" x="58" y="234" width="150" height="500" rx="24" fill="#fff3f2" stroke="#dc2626" stroke-width="2"></rect>
+                                        <text x="133" y="282" text-anchor="middle" fill="#b91c1c" font-size="25" font-weight="700">Zero Trust</text>
+                                        <text x="133" y="315" text-anchor="middle" fill="#b91c1c" font-size="19" font-weight="700">Security</text>
+                                        <text x="133" y="402" text-anchor="middle" fill="#5f6368" font-size="18">Identity-based</text>
+                                        <text x="133" y="430" text-anchor="middle" fill="#5f6368" font-size="18">access</text>
+                                        <text x="133" y="498" text-anchor="middle" fill="#5f6368" font-size="18">Micro-</text>
+                                        <text x="133" y="526" text-anchor="middle" fill="#5f6368" font-size="18">segmentation</text>
+                                        <text x="133" y="586" text-anchor="middle" fill="#5f6368" font-size="18">Policy</text>
+                                        <text x="133" y="614" text-anchor="middle" fill="#5f6368" font-size="18">enforcement</text>
+                                    </g>
 
-                                    <rect x="992" y="234" width="150" height="500" rx="24" fill="#f2fbf7" stroke="#15803d" stroke-width="2"></rect>
-                                    <text x="1067" y="282" text-anchor="middle" fill="#166534" font-size="24" font-weight="700">Operations</text>
-                                    <text x="1067" y="315" text-anchor="middle" fill="#166534" font-size="19" font-weight="700">&amp; Visibility</text>
-                                    <text x="1067" y="402" text-anchor="middle" fill="#5f6368" font-size="18">Telemetry</text>
-                                    <text x="1067" y="477" text-anchor="middle" fill="#5f6368" font-size="18">Monitoring</text>
-                                    <text x="1067" y="552" text-anchor="middle" fill="#5f6368" font-size="18">Automation</text>
-                                    <text x="1067" y="627" text-anchor="middle" fill="#5f6368" font-size="18">DCIM / NOC</text>
+                                    <g class="network-hotspot" data-network-detail="ops" role="button" tabindex="0" aria-label="Show operations and visibility details">
+                                        <rect class="interactive-shape" x="992" y="234" width="150" height="500" rx="24" fill="#f2fbf7" stroke="#15803d" stroke-width="2"></rect>
+                                        <text x="1067" y="282" text-anchor="middle" fill="#166534" font-size="24" font-weight="700">Operations</text>
+                                        <text x="1067" y="315" text-anchor="middle" fill="#166534" font-size="19" font-weight="700">&amp; Visibility</text>
+                                        <text x="1067" y="402" text-anchor="middle" fill="#5f6368" font-size="18">Telemetry</text>
+                                        <text x="1067" y="477" text-anchor="middle" fill="#5f6368" font-size="18">Monitoring</text>
+                                        <text x="1067" y="552" text-anchor="middle" fill="#5f6368" font-size="18">Automation</text>
+                                        <text x="1067" y="627" text-anchor="middle" fill="#5f6368" font-size="18">DCIM / NOC</text>
+                                    </g>
 
-                                    <rect x="320" y="36" width="560" height="144" rx="24" fill="#edf5ff" stroke="#7eaee8" stroke-width="2"></rect>
-                                    <text x="600" y="82" text-anchor="middle" fill="#1557b0" font-size="29" font-weight="700">Enterprise &amp; Cloud Edge</text>
-                                    <text x="600" y="117" text-anchor="middle" fill="#5f6368" font-size="18">DISN / Enterprise Access</text>
-                                    <text x="600" y="147" text-anchor="middle" fill="#5f6368" font-size="18">JWCC / DHMC Connectivity</text>
-                                    <text x="600" y="177" text-anchor="middle" fill="#5f6368" font-size="18">External Mission / Partner Access</text>
+                                    <g class="network-hotspot" data-network-detail="cloud" role="button" tabindex="0" aria-label="Show enterprise and cloud edge details">
+                                        <rect class="interactive-shape" x="320" y="36" width="560" height="144" rx="24" fill="#edf5ff" stroke="#7eaee8" stroke-width="2"></rect>
+                                        <text x="600" y="82" text-anchor="middle" fill="#1557b0" font-size="29" font-weight="700">Enterprise &amp; Cloud Edge</text>
+                                        <text x="600" y="117" text-anchor="middle" fill="#5f6368" font-size="18">DISN / Enterprise Access</text>
+                                        <text x="600" y="147" text-anchor="middle" fill="#5f6368" font-size="18">JWCC / DHMC Connectivity</text>
+                                        <text x="600" y="177" text-anchor="middle" fill="#5f6368" font-size="18">External Mission / Partner Access</text>
+                                    </g>
 
                                     <line x1="600" y1="180" x2="600" y2="214" stroke="#9dc0e6" stroke-width="4" stroke-linecap="round"></line>
                                     <line x1="600" y1="326" x2="600" y2="360" stroke="#8eb7d6" stroke-width="4" stroke-linecap="round"></line>
                                     <line x1="600" y1="520" x2="600" y2="548" stroke="#b5a8f2" stroke-width="4" stroke-linecap="round"></line>
                                     <line x1="600" y1="736" x2="600" y2="764" stroke="#a3aab8" stroke-width="4" stroke-linecap="round"></line>
 
-                                    <rect x="240" y="214" width="720" height="112" rx="24" fill="#f4efe7" stroke="#8b5e34" stroke-width="2"></rect>
-                                    <text x="600" y="258" text-anchor="middle" fill="#374151" font-size="27" font-weight="700">Inter-Site Transport (DCI)</text>
-                                    <text x="600" y="290" text-anchor="middle" fill="#5f6368" font-size="17">High-bandwidth backbone for replication, mobility, and resilience</text>
-                                    <rect x="468" y="294" width="264" height="34" rx="17" fill="#ffffff" stroke="#d4d8df" stroke-width="2"></rect>
-                                    <text x="600" y="317" text-anchor="middle" fill="#374151" font-size="15" font-weight="700">100 Gbps class connectivity</text>
+                                    <g class="network-hotspot" data-network-detail="backbone" role="button" tabindex="0" aria-label="Show inter-site transport and DCI details">
+                                        <rect class="interactive-shape" x="240" y="214" width="720" height="112" rx="24" fill="#f4efe7" stroke="#8b5e34" stroke-width="2"></rect>
+                                        <text x="600" y="258" text-anchor="middle" fill="#374151" font-size="27" font-weight="700">Inter-Site Transport (DCI)</text>
+                                        <text x="600" y="290" text-anchor="middle" fill="#5f6368" font-size="17">High-bandwidth backbone for replication, mobility, and resilience</text>
+                                        <rect x="468" y="294" width="264" height="34" rx="17" fill="#ffffff" stroke="#d4d8df" stroke-width="2"></rect>
+                                        <text x="600" y="317" text-anchor="middle" fill="#374151" font-size="15" font-weight="700">100 Gbps class connectivity</text>
+                                    </g>
 
-                                    <rect x="200" y="360" width="800" height="160" rx="30" fill="#f2eefc" stroke="#8f73ea" stroke-width="3"></rect>
-                                    <text x="600" y="423" text-anchor="middle" fill="#34306e" font-size="34" font-weight="700">Software-Defined Network Fabric</text>
-                                    <text x="600" y="459" text-anchor="middle" fill="#4b5563" font-size="18">Segmentation, tenant isolation, policy enforcement, and traffic orchestration</text>
-                                    <line x1="300" y1="484" x2="900" y2="484" stroke="#cfc6f5" stroke-width="3" stroke-linecap="round"></line>
-                                    <text x="600" y="507" text-anchor="middle" fill="#5b43b4" font-size="15" font-weight="700">Overlay policy and orchestration plane across the physical fabric</text>
+                                    <g class="network-hotspot" data-network-detail="fabric" role="button" tabindex="0" aria-label="Show software-defined fabric details">
+                                        <rect class="interactive-shape" x="200" y="360" width="800" height="160" rx="30" fill="#f2eefc" stroke="#8f73ea" stroke-width="3"></rect>
+                                        <text x="600" y="423" text-anchor="middle" fill="#34306e" font-size="34" font-weight="700">Software-Defined Network Fabric</text>
+                                        <text x="600" y="459" text-anchor="middle" fill="#4b5563" font-size="18">Segmentation, tenant isolation, policy enforcement, and traffic orchestration</text>
+                                        <line x1="300" y1="484" x2="900" y2="484" stroke="#cfc6f5" stroke-width="3" stroke-linecap="round"></line>
+                                        <text x="600" y="507" text-anchor="middle" fill="#5b43b4" font-size="15" font-weight="700">Overlay policy and orchestration plane across the physical fabric</text>
+                                    </g>
 
-                                    <text x="600" y="575" text-anchor="middle" fill="#4b5563" font-size="17" font-weight="700">Physical Spine-Leaf Fabric</text>
+                                    <g class="network-hotspot" data-network-detail="core" role="button" tabindex="0" aria-label="Show spine-leaf physical fabric details">
+                                        <rect class="interactive-shape" x="215" y="552" width="770" height="214" rx="28" fill="transparent" stroke="transparent" stroke-width="2"></rect>
+                                        <text x="600" y="575" text-anchor="middle" fill="#4b5563" font-size="17" font-weight="700">Physical Spine-Leaf Fabric</text>
 
-                                    <rect x="320" y="594" width="140" height="56" rx="18" fill="#3c63b0"></rect>
-                                    <rect x="530" y="594" width="140" height="56" rx="18" fill="#3c63b0"></rect>
-                                    <rect x="740" y="594" width="140" height="56" rx="18" fill="#3c63b0"></rect>
-                                    <text x="390" y="629" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
-                                    <text x="600" y="629" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
-                                    <text x="810" y="629" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
+                                        <rect class="interactive-shape" x="320" y="594" width="140" height="56" rx="18" fill="#3c63b0"></rect>
+                                        <rect class="interactive-shape" x="530" y="594" width="140" height="56" rx="18" fill="#3c63b0"></rect>
+                                        <rect class="interactive-shape" x="740" y="594" width="140" height="56" rx="18" fill="#3c63b0"></rect>
+                                        <text x="390" y="629" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
+                                        <text x="600" y="629" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
+                                        <text x="810" y="629" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
 
-                                    <rect x="240" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
-                                    <rect x="420" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
-                                    <rect x="640" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
-                                    <rect x="820" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
-                                    <text x="310" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
-                                    <text x="490" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
-                                    <text x="710" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
-                                    <text x="890" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
+                                        <rect class="interactive-shape" x="240" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
+                                        <rect class="interactive-shape" x="420" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
+                                        <rect class="interactive-shape" x="640" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
+                                        <rect class="interactive-shape" x="820" y="702" width="140" height="56" rx="18" fill="#1f9b93"></rect>
+                                        <text x="310" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
+                                        <text x="490" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
+                                        <text x="710" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
+                                        <text x="890" y="737" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Leaf</text>
 
-                                    <line x1="390" y1="650" x2="310" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="390" y1="650" x2="490" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="390" y1="650" x2="710" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="390" y1="650" x2="890" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="600" y1="650" x2="310" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="600" y1="650" x2="490" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="600" y1="650" x2="710" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="600" y1="650" x2="890" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="810" y1="650" x2="310" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="810" y1="650" x2="490" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="810" y1="650" x2="710" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
-                                    <line x1="810" y1="650" x2="890" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="390" y1="650" x2="310" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="390" y1="650" x2="490" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="390" y1="650" x2="710" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="390" y1="650" x2="890" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="600" y1="650" x2="310" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="600" y1="650" x2="490" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="600" y1="650" x2="710" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="600" y1="650" x2="890" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="810" y1="650" x2="310" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="810" y1="650" x2="490" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="810" y1="650" x2="710" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                        <line x1="810" y1="650" x2="890" y2="702" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    </g>
 
                                     <line x1="310" y1="758" x2="250" y2="764" stroke="#a3aab8" stroke-width="2.5"></line>
                                     <line x1="490" y1="758" x2="490" y2="764" stroke="#a3aab8" stroke-width="2.5"></line>
                                     <line x1="710" y1="758" x2="710" y2="764" stroke="#a3aab8" stroke-width="2.5"></line>
                                     <line x1="890" y1="758" x2="950" y2="764" stroke="#a3aab8" stroke-width="2.5"></line>
 
-                                    <rect x="135" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
-                                    <rect x="375" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
-                                    <rect x="615" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
-                                    <rect x="855" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
-                                    <text x="250" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Mission Zones</text>
-                                    <text x="250" y="827" text-anchor="middle" fill="#5f6368" font-size="14">Priority mission enclaves</text>
-                                    <text x="490" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Enterprise Hosting</text>
-                                    <text x="490" y="827" text-anchor="middle" fill="#5f6368" font-size="14">Shared enterprise services</text>
-                                    <text x="730" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Data Platforms</text>
-                                    <text x="730" y="827" text-anchor="middle" fill="#5f6368" font-size="14">Analytics and storage services</text>
-                                    <text x="970" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">AI / HPC Pods</text>
-                                    <text x="970" y="827" text-anchor="middle" fill="#5f6368" font-size="14">High-density compute environments</text>
+                                    <g class="network-hotspot" data-network-detail="workloads" role="button" tabindex="0" aria-label="Show workload and service zone details">
+                                        <rect class="interactive-shape" x="135" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                        <text x="250" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Mission Zones</text>
+                                        <text x="250" y="827" text-anchor="middle" fill="#5f6368" font-size="14">Priority mission enclaves</text>
+                                    </g>
+                                    <g class="network-hotspot" data-network-detail="workloads" role="button" tabindex="0" aria-label="Show workload and service zone details">
+                                        <rect class="interactive-shape" x="375" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                        <text x="490" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Enterprise Hosting</text>
+                                        <text x="490" y="827" text-anchor="middle" fill="#5f6368" font-size="14">Shared enterprise services</text>
+                                    </g>
+                                    <g class="network-hotspot" data-network-detail="workloads" role="button" tabindex="0" aria-label="Show workload and service zone details">
+                                        <rect class="interactive-shape" x="615" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                        <text x="730" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Data Platforms</text>
+                                        <text x="730" y="827" text-anchor="middle" fill="#5f6368" font-size="14">Analytics and storage services</text>
+                                    </g>
+                                    <g class="network-hotspot" data-network-detail="workloads" role="button" tabindex="0" aria-label="Show workload and service zone details">
+                                        <rect class="interactive-shape" x="855" y="764" width="230" height="86" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                        <text x="970" y="801" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">AI / HPC Pods</text>
+                                        <text x="970" y="827" text-anchor="middle" fill="#5f6368" font-size="14">High-density compute environments</text>
+                                    </g>
                                 </svg>
                             </div>
                         </div>
                         <p class="network-zero-trust-note">Zero trust and operations functions span the full stack rather than sitting in a single isolated layer.</p>
-                        <div class="network-controls">
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('cloud')">Cloud Edge</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('backbone')">Backbone / DCI</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('fabric')">SDN Fabric</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('core')">Spine-Leaf Fabric</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('workloads')">Workload Zones</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('security')">Zero Trust</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('ops')">Operations</button>
-                        </div>
+                        <p class="network-interaction-hint">Click a layer, pillar, spine-leaf section, or workload box to explore that part of the architecture.</p>
                         <div class="detail-panel" id="network-detail-panel">
                             <h3 id="network-detail-title">Software-Defined Network Fabric</h3>
                             <p class="detail-sub" id="network-detail-subtitle">The visual and operational center of the architecture</p>
