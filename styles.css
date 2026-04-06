@@ -807,8 +807,8 @@ li {
     border-radius: var(--radius-lg);
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 1200 / 860;
-    min-height: 560px;
+    aspect-ratio: 1200 / 880;
+    min-height: 600px;
 }
 
 .network-svg {
@@ -857,7 +857,7 @@ li {
 }
 
 .network-controls .network-control-btn:nth-child(2) {
-    background: #0b5cab;
+    background: #8b5e34;
 }
 
 .network-controls .network-control-btn:nth-child(3) {
@@ -865,10 +865,18 @@ li {
 }
 
 .network-controls .network-control-btn:nth-child(4) {
-    background: #c2410c;
+    background: #3c63b0;
 }
 
 .network-controls .network-control-btn:nth-child(5) {
+    background: #475569;
+}
+
+.network-controls .network-control-btn:nth-child(6) {
+    background: #dc2626;
+}
+
+.network-controls .network-control-btn:nth-child(7) {
     background: #15803d;
 }
 /* OVERVIEW CARD EMPHASIS */

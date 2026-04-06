@@ -94,10 +94,20 @@
             subtitle: "Segmentation, isolation, policy, and orchestration",
             text: "This is the operational center of the diagram. The software-defined fabric applies segmentation, tenant isolation, policy enforcement, and traffic orchestration across the environment."
         },
+        workloads: {
+            title: "Workload / Service Zones",
+            subtitle: "Examples of hosted environments below the fabric",
+            text: "The bottom tier shows how the common fabric supports distinct hosting domains. Mission Zones represent priority enclaves, Enterprise Hosting supports shared business and platform services, Data Platforms cover analytics and storage services, and AI / HPC Pods support high-density compute environments."
+        },
         security: {
-            title: "Zero Trust / Security and Operations / Visibility",
-            subtitle: "Security enforcement and operational awareness across all layers",
-            text: "The side pillars show capabilities that span the entire stack: identity-based access, microsegmentation, inspection and policy on one side, and telemetry, monitoring, automation, and DCIM / NOC visibility on the other."
+            title: "Zero Trust Security",
+            subtitle: "Identity-based access, microsegmentation, and policy enforcement",
+            text: "The left pillar represents the security functions applied across every layer of the architecture. Identity-based access controls who connects, microsegmentation constrains east-west movement, and policy enforcement keeps traffic aligned to mission and enterprise boundaries."
+        },
+        ops: {
+            title: "Operations & Visibility",
+            subtitle: "Telemetry, monitoring, automation, and DCIM / NOC awareness",
+            text: "The right pillar represents the operational plane that supports the network. Telemetry and monitoring provide visibility, automation improves consistency and response time, and DCIM / NOC functions help coordinate health, capacity, and infrastructure operations."
         }
     };
 
