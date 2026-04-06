@@ -807,8 +807,8 @@ li {
     border-radius: var(--radius-lg);
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 1200 / 620;
-    min-height: 360px;
+    aspect-ratio: 1200 / 860;
+    min-height: 560px;
 }
 
 .network-svg {

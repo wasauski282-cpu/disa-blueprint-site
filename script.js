@@ -75,29 +75,29 @@
 
     const networkDetails = {
         core: {
-            title: "Resilient Core",
-            subtitle: "Paired primary sites with central recovery support",
-            text: "The blueprint centers on OGDN and COLS as the primary backbone pair, with OKC positioned as the central swing site for disaster recovery, surge demand, and operational flexibility."
+            title: "Spine-Leaf Physical Fabric",
+            subtitle: "Full-mesh spine-to-leaf connectivity below the SDN layer",
+            text: "The physical fabric is shown as a simple spine-leaf topology. Multiple spine nodes connect to every leaf node, creating predictable east-west paths and a scalable underlay for workload access."
         },
         cloud: {
-            title: "Hybrid Cloud Integration",
-            subtitle: "Direct connectivity to JWCC and DHMC",
-            text: "The network is designed to connect the megacenters directly into DISA hybrid cloud environments, including JWCC and DHMC, so workloads can operate in a coordinated hybrid model."
+            title: "Enterprise & Cloud Interconnect",
+            subtitle: "DISN, JWCC / DHMC, and external mission connectivity",
+            text: "The top layer represents enterprise and cloud-facing access, linking DISN, JWCC / DHMC, and external mission or partner connectivity into the architecture through a defined interconnect layer."
         },
         backbone: {
-            title: "High-Speed Interconnect",
-            subtitle: "100 Gbps class secure inter-site links",
-            text: "High-bandwidth links between the megacenters support near real-time replication, workload mobility, and coordinated continuity operations across the enterprise."
+            title: "Inter-Site Backbone / DCI",
+            subtitle: "High-bandwidth transport for mobility and resilience",
+            text: "This layer provides the high-bandwidth transport needed for replication, workload mobility, and resilience. The blueprint supports 100 Gbps class capability without tying the design to a specific vendor implementation."
         },
         fabric: {
-            title: "Site Fabrics",
-            subtitle: "Spine-leaf structure at each megacenter",
-            text: "Each site uses a modern fabric approach, represented here as a spine-leaf pattern, to support scalable east-west traffic, clean segmentation, and repeatable architecture across OGDN, OKC, and COLS."
+            title: "Software-Defined Network Fabric",
+            subtitle: "Segmentation, isolation, policy, and orchestration",
+            text: "This is the operational center of the diagram. The software-defined fabric applies segmentation, tenant isolation, policy enforcement, and traffic orchestration across the environment."
         },
         security: {
-            title: "Zero Trust Networking",
-            subtitle: "Identity-based policy with no implicit trust",
-            text: "The network enforces zero trust principles through microsegmentation, identity-based access, and policy-driven controls so traffic is evaluated explicitly rather than trusted by default."
+            title: "Zero Trust / Security and Operations / Visibility",
+            subtitle: "Security enforcement and operational awareness across all layers",
+            text: "The side pillars show capabilities that span the entire stack: identity-based access, microsegmentation, inspection and policy on one side, and telemetry, monitoring, automation, and DCIM / NOC visibility on the other."
         }
     };
 
@@ -224,6 +224,6 @@
     activateTab("overview");
     showHubDetail("center");
     showSiteDetail("ogdn");
-    showNetworkDetail("core");
+    showNetworkDetail("fabric");
 });
 

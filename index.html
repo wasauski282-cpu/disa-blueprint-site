@@ -510,119 +510,136 @@
                     <div class="card network-hero-card">
                         <h2>Network Architecture</h2>
                         <p class="lede">
-                            This architecture connects three DISA megacenters (OGDN, OKC, COLS) through high-speed, secure
-                            interconnects, enabling resilient, hybrid cloud operations and zero trust enforcement.
+                            The proposed network is organized as a layered data center architecture with clear edge,
+                            transport, software-defined control, spine-leaf fabric, and workload tiers.
                         </p>
 
                         <div class="network-visual-wrap">
                             <div class="network-visual">
-                                <svg class="network-svg" viewBox="0 0 1200 620" role="img" aria-label="DISA megacenter topology with OGDN and COLS as primary backbone sites, OKC as the central swing and disaster recovery site, hybrid cloud connectivity to JWCC and DHMC, and 100 gigabit class inter-site links">
-                                    <!-- hybrid cloud layer -->
-                                    <rect x="410" y="36" width="380" height="82" rx="20" fill="#e7f4ff" stroke="#8db7e8" stroke-width="2"></rect>
-                                    <text x="600" y="70" text-anchor="middle" fill="#1557b0" font-size="24" font-weight="700">Hybrid Cloud Connectivity</text>
-                                    <text x="600" y="96" text-anchor="middle" fill="#5f6368" font-size="16">JWCC / DHMC integration</text>
+                                <svg class="network-svg" viewBox="0 0 1200 860" role="img" aria-label="Layered DISA data center network diagram showing enterprise and cloud edge, inter-site transport, software-defined network fabric, spine-leaf physical fabric, workload zones, zero trust security, and operations visibility">
+                                    <rect x="40" y="170" width="180" height="600" rx="24" fill="#fff8f1" stroke="#e8a04c" stroke-width="2"></rect>
+                                    <text x="130" y="214" text-anchor="middle" fill="#9a3412" font-size="24" font-weight="700">Zero Trust</text>
+                                    <text x="130" y="244" text-anchor="middle" fill="#9a3412" font-size="18" font-weight="700">Security</text>
+                                    <text x="130" y="320" text-anchor="middle" fill="#5f6368" font-size="15">Identity-based access</text>
+                                    <text x="130" y="380" text-anchor="middle" fill="#5f6368" font-size="15">Microsegmentation</text>
+                                    <text x="130" y="440" text-anchor="middle" fill="#5f6368" font-size="15">Policy enforcement</text>
 
-                                    <!-- cloud connectors -->
-                                    <line x1="485" y1="118" x2="310" y2="190" stroke="#8db7e8" stroke-width="4" stroke-linecap="round"></line>
-                                    <line x1="715" y1="118" x2="890" y2="190" stroke="#8db7e8" stroke-width="4" stroke-linecap="round"></line>
+                                    <rect x="980" y="170" width="180" height="600" rx="24" fill="#f4fbf6" stroke="#4aa36b" stroke-width="2"></rect>
+                                    <text x="1070" y="214" text-anchor="middle" fill="#166534" font-size="24" font-weight="700">Operations</text>
+                                    <text x="1070" y="244" text-anchor="middle" fill="#166534" font-size="18" font-weight="700">&amp; Visibility</text>
+                                    <text x="1070" y="320" text-anchor="middle" fill="#5f6368" font-size="15">Telemetry</text>
+                                    <text x="1070" y="380" text-anchor="middle" fill="#5f6368" font-size="15">Monitoring</text>
+                                    <text x="1070" y="440" text-anchor="middle" fill="#5f6368" font-size="15">Automation</text>
+                                    <text x="1070" y="500" text-anchor="middle" fill="#5f6368" font-size="15">DCIM / NOC</text>
 
-                                    <!-- primary pair -->
-                                    <path d="M320 230 C460 190, 740 190, 880 230"
-                                    fill="none"
-                                    stroke="#1557b0"
-                                    stroke-width="5"
-                                    stroke-linecap="round"/>
-                                    <text x="600" y="174" text-anchor="middle" fill="#1557b0" font-size="18" font-weight="700">High-speed inter-site backbone (100 Gbps class)</text>
+                                    <rect x="300" y="34" width="600" height="114" rx="22" fill="#edf5ff" stroke="#8db7e8" stroke-width="2"></rect>
+                                    <text x="600" y="70" text-anchor="middle" fill="#1557b0" font-size="28" font-weight="700">Enterprise &amp; Cloud Edge</text>
+                                    <text x="600" y="100" text-anchor="middle" fill="#5f6368" font-size="17">DISN / Enterprise Access</text>
+                                    <text x="600" y="124" text-anchor="middle" fill="#5f6368" font-size="17">JWCC / DHMC Connectivity</text>
+                                    <text x="600" y="148" text-anchor="middle" fill="#5f6368" font-size="17">External Mission / Partner Access</text>
 
-                                    <!-- OKC swing links -->
-                                    <path d="M360 338 C460 380, 520 404, 585 440"
-                                    fill="none"
-                                    stroke="#5b8fd6"
-                                    stroke-width="5"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="12 10"/>
-                                    <path d="M840 338 C740 380, 680 404, 615 440"
-                                    fill="none"
-                                    stroke="#5b8fd6"
-                                    stroke-width="5"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="12 10"/>
-                                    <text x="600" y="398" text-anchor="middle" fill="#426ca8" font-size="17" font-weight="700">DR / surge / replication paths</text>
+                                    <line x1="600" y1="148" x2="600" y2="178" stroke="#9dc0e6" stroke-width="4" stroke-linecap="round"></line>
+                                    <line x1="600" y1="286" x2="600" y2="318" stroke="#9dc0e6" stroke-width="4" stroke-linecap="round"></line>
+                                    <line x1="600" y1="472" x2="600" y2="510" stroke="#b5a8f2" stroke-width="4" stroke-linecap="round"></line>
+                                    <line x1="600" y1="720" x2="600" y2="748" stroke="#b5a8f2" stroke-width="4" stroke-linecap="round"></line>
 
-                                    <!-- OGDN site -->
-                                    <rect x="100" y="220" width="260" height="190" rx="24" fill="#f8fbff" stroke="#b8cce3" stroke-width="2"></rect>
-                                    <text x="230" y="264" text-anchor="middle" fill="#1f2937" font-size="30" font-weight="700">OGDN</text>
-                                    <text x="230" y="296" text-anchor="middle" fill="#5f6368" font-size="16">West</text>
-                                    <text x="230" y="326" text-anchor="middle" fill="#1557b0" font-size="16" font-weight="700">Primary backbone site</text>
-                                    <text x="230" y="356" text-anchor="middle" fill="#5f6368" font-size="15">Spine-leaf fabric</text>
-                                    <circle cx="200" cy="386" r="10" fill="#5b43b4"></circle>
-                                    <circle cx="260" cy="386" r="10" fill="#5b43b4"></circle>
-                                    <line x1="200" y1="386" x2="260" y2="386" stroke="#8c79f2" stroke-width="4" stroke-linecap="round"></line>
-                                    <circle cx="170" cy="418" r="8" fill="#8c79f2"></circle>
-                                    <circle cx="230" cy="418" r="8" fill="#8c79f2"></circle>
-                                    <circle cx="290" cy="418" r="8" fill="#8c79f2"></circle>
-                                    <line x1="200" y1="386" x2="170" y2="418" stroke="#b9aefc" stroke-width="3" stroke-linecap="round"></line>
-                                    <line x1="230" y1="386" x2="230" y2="418" stroke="#b9aefc" stroke-width="3" stroke-linecap="round"></line>
-                                    <line x1="260" y1="386" x2="290" y2="418" stroke="#b9aefc" stroke-width="3" stroke-linecap="round"></line>
+                                    <rect x="180" y="178" width="840" height="108" rx="24" fill="#fbf2ea" stroke="#f2a15a" stroke-width="2"></rect>
+                                    <text x="600" y="222" text-anchor="middle" fill="#374151" font-size="26" font-weight="700">Inter-Site Transport (DCI)</text>
+                                    <text x="600" y="252" text-anchor="middle" fill="#5f6368" font-size="16">High-bandwidth backbone for replication, mobility, and resilience</text>
+                                    <rect x="470" y="258" width="260" height="32" rx="15" fill="#ffffff" stroke="#d9dce2" stroke-width="2"></rect>
+                                    <text x="600" y="279" text-anchor="middle" fill="#374151" font-size="14" font-weight="700">100 Gbps class connectivity</text>
 
-                                    <!-- OKC site -->
-                                    <rect x="455" y="440" width="290" height="120" rx="22" fill="#fffaf2" stroke="#f2c07b" stroke-width="2"></rect>
-                                    <text x="600" y="484" text-anchor="middle" fill="#1f2937" font-size="28" font-weight="700">OKC</text>
-                                    <text x="600" y="514" text-anchor="middle" fill="#5f6368" font-size="16">Central swing / DR site</text>
-                                    <text x="600" y="542" text-anchor="middle" fill="#9a3412" font-size="16" font-weight="700">Surge and recovery support</text>
+                                    <rect x="150" y="318" width="900" height="154" rx="30" fill="#f2eefc" stroke="#a184ea" stroke-width="3"></rect>
+                                    <text x="600" y="376" text-anchor="middle" fill="#34306e" font-size="34" font-weight="700">Software-Defined Network Fabric</text>
+                                    <text x="600" y="412" text-anchor="middle" fill="#4b5563" font-size="17">Segmentation, tenant isolation, policy enforcement, and traffic orchestration</text>
+                                    <line x1="245" y1="438" x2="955" y2="438" stroke="#cfc6f5" stroke-width="3" stroke-linecap="round"></line>
+                                    <text x="600" y="458" text-anchor="middle" fill="#5b43b4" font-size="14" font-weight="700">Overlay policy and orchestration plane across the physical fabric</text>
 
-                                    <!-- COLS site -->
-                                    <rect x="840" y="220" width="260" height="190" rx="24" fill="#f8fbff" stroke="#b8cce3" stroke-width="2"></rect>
-                                    <text x="970" y="264" text-anchor="middle" fill="#1f2937" font-size="30" font-weight="700">COLS</text>
-                                    <text x="970" y="296" text-anchor="middle" fill="#5f6368" font-size="16">East</text>
-                                    <text x="970" y="326" text-anchor="middle" fill="#1557b0" font-size="16" font-weight="700">Primary backbone site</text>
-                                    <text x="970" y="356" text-anchor="middle" fill="#5f6368" font-size="15">Spine-leaf fabric</text>
-                                    <circle cx="940" cy="386" r="10" fill="#5b43b4"></circle>
-                                    <circle cx="1000" cy="386" r="10" fill="#5b43b4"></circle>
-                                    <line x1="940" y1="386" x2="1000" y2="386" stroke="#8c79f2" stroke-width="4" stroke-linecap="round"></line>
-                                    <circle cx="910" cy="418" r="8" fill="#8c79f2"></circle>
-                                    <circle cx="970" cy="418" r="8" fill="#8c79f2"></circle>
-                                    <circle cx="1030" cy="418" r="8" fill="#8c79f2"></circle>
-                                    <line x1="940" y1="386" x2="910" y2="418" stroke="#b9aefc" stroke-width="3" stroke-linecap="round"></line>
-                                    <line x1="970" y1="386" x2="970" y2="418" stroke="#b9aefc" stroke-width="3" stroke-linecap="round"></line>
-                                    <line x1="1000" y1="386" x2="1030" y2="418" stroke="#b9aefc" stroke-width="3" stroke-linecap="round"></line>
+                                    <text x="600" y="526" text-anchor="middle" fill="#4b5563" font-size="16" font-weight="700">Physical Spine-Leaf Fabric</text>
+
+                                    <rect x="295" y="540" width="160" height="54" rx="18" fill="#3c63b0"></rect>
+                                    <rect x="520" y="540" width="160" height="54" rx="18" fill="#3c63b0"></rect>
+                                    <rect x="745" y="540" width="160" height="54" rx="18" fill="#3c63b0"></rect>
+                                    <text x="375" y="574" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
+                                    <text x="600" y="574" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
+                                    <text x="825" y="574" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Spine</text>
+
+                                    <rect x="220" y="650" width="150" height="52" rx="18" fill="#1f9b93"></rect>
+                                    <rect x="415" y="650" width="150" height="52" rx="18" fill="#1f9b93"></rect>
+                                    <rect x="610" y="650" width="150" height="52" rx="18" fill="#1f9b93"></rect>
+                                    <rect x="805" y="650" width="150" height="52" rx="18" fill="#1f9b93"></rect>
+                                    <text x="295" y="683" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="700">Leaf</text>
+                                    <text x="490" y="683" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="700">Leaf</text>
+                                    <text x="685" y="683" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="700">Leaf</text>
+                                    <text x="880" y="683" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="700">Leaf</text>
+
+                                    <line x1="375" y1="594" x2="295" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="375" y1="594" x2="490" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="375" y1="594" x2="685" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="375" y1="594" x2="880" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="600" y1="594" x2="295" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="600" y1="594" x2="490" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="600" y1="594" x2="685" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="600" y1="594" x2="880" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="825" y1="594" x2="295" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="825" y1="594" x2="490" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="825" y1="594" x2="685" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+                                    <line x1="825" y1="594" x2="880" y2="650" stroke="#8d92c3" stroke-width="2.5"></line>
+
+                                    <line x1="295" y1="702" x2="255" y2="748" stroke="#a3aab8" stroke-width="2.5"></line>
+                                    <line x1="490" y1="702" x2="495" y2="748" stroke="#a3aab8" stroke-width="2.5"></line>
+                                    <line x1="685" y1="702" x2="735" y2="748" stroke="#a3aab8" stroke-width="2.5"></line>
+                                    <line x1="880" y1="702" x2="975" y2="748" stroke="#a3aab8" stroke-width="2.5"></line>
+
+                                    <rect x="140" y="748" width="230" height="82" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                    <rect x="380" y="748" width="230" height="82" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                    <rect x="620" y="748" width="230" height="82" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                    <rect x="860" y="748" width="230" height="82" rx="20" fill="#eef2f8" stroke="#d6dce7" stroke-width="2"></rect>
+                                    <text x="255" y="784" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Mission Zones</text>
+                                    <text x="255" y="809" text-anchor="middle" fill="#5f6368" font-size="13">Priority mission enclaves</text>
+                                    <text x="495" y="784" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Enterprise Hosting</text>
+                                    <text x="495" y="809" text-anchor="middle" fill="#5f6368" font-size="13">Shared enterprise services</text>
+                                    <text x="735" y="784" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">Data Platforms</text>
+                                    <text x="735" y="809" text-anchor="middle" fill="#5f6368" font-size="13">Analytics and storage services</text>
+                                    <text x="975" y="784" text-anchor="middle" fill="#1f2937" font-size="21" font-weight="700">AI / HPC Pods</text>
+                                    <text x="975" y="809" text-anchor="middle" fill="#5f6368" font-size="13">High-density compute environments</text>
                                 </svg>
                             </div>
                         </div>
-                        <p class="network-zero-trust-note">Zero Trust: identity-based access and microsegmentation across all sites</p>
+                        <p class="network-zero-trust-note">Zero trust and operations functions span the full stack rather than sitting in a single isolated layer.</p>
                         <div class="network-controls">
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('core')">Resilient Core</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('backbone')">High-Speed Interconnect</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('fabric')">Site Fabrics</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('security')">Zero Trust Networking</button>
-                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('cloud')">Hybrid Cloud Integration</button>
+                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('cloud')">Cloud Interconnect</button>
+                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('backbone')">Backbone / DCI</button>
+                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('fabric')">SDN Fabric</button>
+                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('core')">Site Fabric</button>
+                            <button type="button" class="network-control-btn" onclick="showNetworkDetail('security')">Security &amp; Ops</button>
                         </div>
                         <div class="detail-panel" id="network-detail-panel">
-                            <h3 id="network-detail-title">Resilient Core</h3>
-                            <p class="detail-sub" id="network-detail-subtitle">Paired primary sites with central recovery support</p>
+                            <h3 id="network-detail-title">Software-Defined Network Fabric</h3>
+                            <p class="detail-sub" id="network-detail-subtitle">The visual and operational center of the architecture</p>
                             <p id="network-detail-text">
-                                OGDN and COLS operate as the primary pair in the blueprint, while OKC provides central swing,
-                                disaster-recovery, and surge capacity to keep the enterprise operating through disruption or demand spikes.
+                                The software-defined fabric is the coordinating layer for segmentation, tenant isolation,
+                                policy enforcement, and traffic orchestration across the rest of the network stack.
                             </p>
                         </div>
                     </div>
 
                     <div class="grid grid-4">
                         <div class="feature-card">
-                            <h3>Resilient Core</h3>
-                            <p>OGDN and COLS operate as the primary pair, while OKC provides disaster recovery coverage and surge capacity.</p>
+                            <h3>Enterprise &amp; Cloud Interconnect</h3>
+                            <p>Provides DISN, JWCC / DHMC, and external mission connectivity through a clean north-south access layer.</p>
                         </div>
                         <div class="feature-card">
-                            <h3>High-Speed Interconnect</h3>
-                            <p>100 Gbps+ class links enable near real-time replication, workload mobility, and coordinated enterprise operations across the three sites.</p>
+                            <h3>Inter-Site Backbone / DCI</h3>
+                            <p>Delivers high-bandwidth transport for replication, workload mobility, and resilience with 100 Gbps class support.</p>
                         </div>
                         <div class="feature-card">
-                            <h3>Zero Trust Networking</h3>
-                            <p>Microsegmentation and identity-based access enforce policy boundaries with no implicit trust across the network.</p>
+                            <h3>Software-Defined Fabric</h3>
+                            <p>Acts as the policy-driven center of the design, coordinating segmentation, isolation, and traffic handling.</p>
                         </div>
                         <div class="feature-card">
-                            <h3>Hybrid Cloud Integration</h3>
-                            <p>Direct connectivity to JWCC and DISA hybrid cloud extends the megacenters into a consistent hybrid hosting model.</p>
+                            <h3>Workload / Service Zones</h3>
+                            <p>Supports mission, enterprise, data, and AI / HPC environments on shared infrastructure with logical separation.</p>
                         </div>
                     </div>
                 </section>
