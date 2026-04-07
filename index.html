@@ -664,62 +664,105 @@
 
                 <!-- SECURITY -->
                 <section id="security" class="tab-panel security-theme" role="tabpanel" aria-labelledby="tab-security" hidden>
-                    <div class="grid grid-4">
-                        <div class="metric-card">
-                            <div class="metric-value">Zero Trust</div>
-                            <div class="metric-label">Default Security Model</div>
+                    <div class="card security-hero-card">
+                        <h2>Security by Design</h2>
+                        <p class="lede">
+                            The security model is shown as a zero trust access path so leaders can quickly see how different users
+                            are authenticated, checked, constrained, monitored, and routed only to approved services.
+                        </p>
+
+                        <div class="security-visual-wrap">
+                            <div class="security-visual security-path-visual">
+                                <div class="security-pathway">
+                                    <div class="security-column-heading">Zero Trust Access Path</div>
+                                    <div class="security-layers">
+                                        <button type="button" class="security-hotspot security-layer layer-auth" data-security-detail="authenticate" onclick="showSecurityDetail('authenticate')">
+                                            <span class="security-layer-icon" aria-hidden="true">👤</span>
+                                            <span>Identity Verification</span>
+                                        </button>
+                                        <button type="button" class="security-hotspot security-layer layer-context" data-security-detail="context" onclick="showSecurityDetail('context')">
+                                            <span class="security-layer-icon" aria-hidden="true">💻</span>
+                                            <span>Device &amp; Session Context</span>
+                                        </button>
+                                        <button type="button" class="security-hotspot security-layer layer-policy" data-security-detail="policy" onclick="showSecurityDetail('policy')">
+                                            <span class="security-layer-icon" aria-hidden="true">📋</span>
+                                            <span>Policy Decision</span>
+                                        </button>
+                                        <button type="button" class="security-hotspot security-layer layer-segment" data-security-detail="segment" onclick="showSecurityDetail('segment')">
+                                            <span class="security-layer-icon" aria-hidden="true">🧩</span>
+                                            <span>Segmented Access</span>
+                                        </button>
+                                        <button type="button" class="security-hotspot security-layer layer-monitor" data-security-detail="monitor" onclick="showSecurityDetail('monitor')">
+                                            <span class="security-layer-icon" aria-hidden="true">👁️</span>
+                                            <span>Continuous Monitoring</span>
+                                        </button>
+                                        <button type="button" class="security-hotspot security-layer layer-privileged" data-security-detail="privileged_controls" onclick="showSecurityDetail('privileged_controls')">
+                                            <span class="security-layer-icon" aria-hidden="true">🔒</span>
+                                            <span>Elevated Control</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="security-path-map" aria-label="Zero trust access path diagram">
+                                        <svg class="security-path-svg" viewBox="0 0 1000 360" aria-hidden="true">
+                                            <line x1="100" y1="0" x2="100" y2="320" class="security-line checkpoint-line"></line>
+                                            <line x1="240" y1="0" x2="240" y2="320" class="security-line checkpoint-line"></line>
+                                            <line x1="380" y1="0" x2="380" y2="320" class="security-line checkpoint-line"></line>
+                                            <line x1="520" y1="0" x2="520" y2="320" class="security-line checkpoint-line"></line>
+                                            <line x1="660" y1="0" x2="660" y2="320" class="security-line checkpoint-line"></line>
+                                            <line x1="800" y1="0" x2="800" y2="96" class="security-line checkpoint-line"></line>
+
+                                            <line x1="112" y1="76" x2="778" y2="76" class="security-line privileged-line"></line>
+                                            <polyline points="768,68 778,76 768,84" class="security-arrow privileged-line"></polyline>
+
+                                            <line x1="112" y1="166" x2="732" y2="166" class="security-line partner-line"></line>
+                                            <polyline points="722,158 732,166 722,174" class="security-arrow partner-line"></polyline>
+
+                                            <line x1="112" y1="256" x2="872" y2="256" class="security-line enduser-line"></line>
+                                            <polyline points="862,248 872,256 862,264" class="security-arrow enduser-line"></polyline>
+
+                                            <line x1="838" y1="104" x2="838" y2="228" class="security-line service-branch"></line>
+                                            <line x1="838" y1="228" x2="728" y2="228" class="security-line service-branch"></line>
+                                            <line x1="838" y1="228" x2="934" y2="228" class="security-line service-branch"></line>
+                                        </svg>
+
+                                        <button type="button" class="security-hotspot path-node node-privileged start" data-security-detail="privileged" onclick="showSecurityDetail('privileged')">Privileged User</button>
+                                        <button type="button" class="security-hotspot path-node node-partner start" data-security-detail="partner" onclick="showSecurityDetail('partner')">Mission Partner</button>
+                                        <button type="button" class="security-hotspot path-node node-end-user start" data-security-detail="end_user" onclick="showSecurityDetail('end_user')">End User</button>
+
+                                        <button type="button" class="security-hotspot path-node service service-management" data-security-detail="management_plane" onclick="showSecurityDetail('management_plane')">Management &amp; Automation Plane</button>
+                                        <button type="button" class="security-hotspot path-node service service-mission" data-security-detail="mission_services" onclick="showSecurityDetail('mission_services')">Mission Services</button>
+                                        <button type="button" class="security-hotspot path-node service service-enterprise" data-security-detail="enterprise_services" onclick="showSecurityDetail('enterprise_services')">Enterprise Services</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="metric-card">
-                            <div class="metric-value">FIPS 140-3</div>
-                            <div class="metric-label">Crypto Standard</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">SCIF-Ready</div>
-                            <div class="metric-label">MAC I Zones</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">STIG</div>
-                            <div class="metric-label">Automated Compliance</div>
+
+                        <div class="detail-panel" id="security-detail-panel">
+                            <h3 id="security-detail-title">Policy Decision</h3>
+                            <p class="detail-sub" id="security-detail-subtitle">Every request is evaluated before it is routed to a service</p>
+                            <p id="security-detail-text">
+                                Identity, device posture, session context, and role are evaluated together so requests can move only into the
+                                approved service zone. Different personas follow different constrained paths, but none receive implicit trust.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <h2>Security by Design</h2>
-                        <p class="lede">
-                            Security spans physical, network, identity, application, and data layers. The design treats the
-                            facility network as untrusted transport and continuously evaluates users, devices, workloads, and flows.
-                        </p>
-
-                        <div class="grid grid-3">
-                            <div class="feature-card">
-                                <h3>Identity-Driven Access</h3>
-                                <p>Leverages enterprise identity and attribute-based access control to enforce policy consistently.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Micro-Segmented Networks</h3>
-                                <p>SDN-enforced segmentation and next-generation firewalls provide strong east-west and tenant isolation.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Continuous Monitoring</h3>
-                                <p>Centralized SIEM, control inheritance, and automated compliance accelerate hosted mission readiness.</p>
-                            </div>
+                    <div class="grid grid-4">
+                        <div class="feature-card">
+                            <h3>Persona-Aware Access</h3>
+                            <p>Mission partners, end users, and privileged users follow distinct policy paths based on role, mission need, and risk.</p>
                         </div>
-
-                        <div class="accordion open">
-                            <button class="accordion-button" type="button" onclick="toggleAccordion(this)">
-                                <div>
-                                    <div class="accordion-title">Physical and classified workload protections</div>
-                                    <div class="accordion-subtitle">High-sensitivity mission support</div>
-                                </div>
-                                <span class="chevron">▼</span>
-                            </button>
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>SCIF-grade protections for MAC I zones, including controlled ingress/egress and reinforced spaces.</li>
-                                    <li>TEMPEST-aware design considerations and strong physical monitoring.</li>
-                                    <li>Logical zoning of raised floor spaces into independent security domains.</li>
-                                </ul>
-                            </div>
+                        <div class="feature-card">
+                            <h3>Sequential Zero Trust Gates</h3>
+                            <p>Identity, context, policy, segmentation, and monitoring operate as a continuous decision path rather than a one-time perimeter check.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Segmented Destinations</h3>
+                            <p>Mission, enterprise, management, and data environments remain isolated so each request lands only where policy allows.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Elevated Oversight</h3>
+                            <p>Administrative access takes an additional control path with stronger approval, logging, and operational scrutiny.</p>
                         </div>
                     </div>
                 </section>

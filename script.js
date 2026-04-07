@@ -111,6 +111,69 @@
         }
     };
 
+    const securityDetails = {
+        partner: {
+            title: "Mission Partner",
+            subtitle: "Federated access into approved mission services",
+            text: "Mission partner traffic follows the standard zero trust path, but its destination is tightly bounded to approved mission services. Federation, request context, and policy keep partner access interoperable without exposing broader enterprise or management functions."
+        },
+        end_user: {
+            title: "End User",
+            subtitle: "Standard enterprise path with least-privilege access",
+            text: "End users follow the full zero trust sequence through identity verification, device and session evaluation, policy decision, segmented access, and continuous monitoring before reaching approved enterprise services."
+        },
+        privileged: {
+            title: "Privileged User",
+            subtitle: "Administrative path with stronger controls and oversight",
+            text: "Privileged users do not bypass zero trust controls. They traverse the same identity, context, policy, segmentation, and monitoring path as everyone else, then pass through an additional elevated-control checkpoint before reaching the management and automation plane."
+        },
+        authenticate: {
+            title: "Identity Verification",
+            subtitle: "Establish who is requesting access",
+            text: "The path begins by verifying identity, credentials, and role. Strong authentication and approved trust relationships establish whether the request is legitimate enough to move forward."
+        },
+        context: {
+            title: "Device & Session Context",
+            subtitle: "Assess posture, session health, and environment",
+            text: "Identity alone is not enough. Device posture, session state, request source, and environmental context are evaluated so risk can be factored into the access decision."
+        },
+        policy: {
+            title: "Policy Decision",
+            subtitle: "Apply zero trust decision logic",
+            text: "This is the core zero trust decision point. Identity, device state, mission need, and user role are combined to determine whether access is allowed and what boundaries must apply."
+        },
+        segment: {
+            title: "Segmented Access",
+            subtitle: "Permit only the approved path to the approved zone",
+            text: "Approved requests are routed only into the specific service segment they are authorized to reach. Mission, enterprise, and management environments remain isolated even when they share infrastructure."
+        },
+        monitor: {
+            title: "Continuous Monitoring",
+            subtitle: "Observe, log, and reassess throughout the session",
+            text: "Security does not stop once access is granted. Telemetry, audit events, alerts, and operational monitoring continue to assess the session for anomalies, misuse, or policy drift."
+        },
+        privileged_controls: {
+            title: "Privileged Access Controls",
+            subtitle: "Additional gates for administrative actions",
+            text: "Administrative access is subject to stronger approval and monitoring requirements. The privileged path adds extra checks and oversight before any request can reach management systems or high-impact control planes."
+        },
+        mission_services: {
+            title: "Mission Services",
+            subtitle: "Approved partner and mission user destination zone",
+            text: "Mission services are reachable only through approved mission-aligned policy paths. Partner and mission user traffic is constrained so it cannot expand laterally beyond the required enclave or service set."
+        },
+        enterprise_services: {
+            title: "Enterprise Services",
+            subtitle: "Standard business and support service zone",
+            text: "Enterprise services provide the shared capabilities most end users need. Access is still policy-bound, segmented, and continuously monitored even when the destination is a routine business service."
+        },
+        management_plane: {
+            title: "Management & Automation Plane",
+            subtitle: "Administrative destination with strict elevation controls",
+            text: "Management and automation functions sit behind the most restrictive path in the diagram. Only privileged users who satisfy the elevated-control step can reach this plane, and their actions remain under expanded audit and monitoring."
+        }
+    };
+
     function activateTab(targetId) {
         tabButtons.forEach(function (button) {
             const isActive = button.getAttribute("data-tab") === targetId;
@@ -235,6 +298,23 @@
         });
     };
 
+    window.showSecurityDetail = function (key) {
+        const detail = securityDetails[key];
+        if (!detail) return;
+
+        const title = document.getElementById("security-detail-title");
+        const subtitle = document.getElementById("security-detail-subtitle");
+        const text = document.getElementById("security-detail-text");
+
+        if (title) title.textContent = detail.title;
+        if (subtitle) subtitle.textContent = detail.subtitle;
+        if (text) text.textContent = detail.text;
+
+        document.querySelectorAll(".security-hotspot").forEach(function (item) {
+            item.classList.toggle("is-active", item.getAttribute("data-security-detail") === key);
+        });
+    };
+
     document.querySelectorAll(".network-hotspot").forEach(function (item) {
         item.addEventListener("click", function () {
             const key = item.getAttribute("data-network-detail");
@@ -249,9 +329,19 @@
         });
     });
 
+    document.querySelectorAll(".security-hotspot").forEach(function (item) {
+        item.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            const key = item.getAttribute("data-security-detail");
+            if (key) showSecurityDetail(key);
+        });
+    });
+
     activateTab("overview");
     showHubDetail("center");
     showSiteDetail("ogdn");
     showNetworkDetail("fabric");
+    showSecurityDetail("policy");
 });
 
