@@ -703,27 +703,45 @@
                                     </div>
 
                                     <div class="security-path-map" aria-label="Zero trust access path diagram">
-                                        <svg class="security-path-svg" viewBox="0 0 1000 360" aria-hidden="true">
-                                            <line x1="100" y1="0" x2="100" y2="320" class="security-line checkpoint-line"></line>
-                                            <line x1="240" y1="0" x2="240" y2="320" class="security-line checkpoint-line"></line>
-                                            <line x1="380" y1="0" x2="380" y2="320" class="security-line checkpoint-line"></line>
-                                            <line x1="520" y1="0" x2="520" y2="320" class="security-line checkpoint-line"></line>
-                                            <line x1="660" y1="0" x2="660" y2="320" class="security-line checkpoint-line"></line>
-                                            <line x1="800" y1="0" x2="800" y2="96" class="security-line checkpoint-line"></line>
+                                        <div class="zt-grid-overlay" aria-hidden="true">
+                                            <span class="zt-checkpoint-line zt-col-1"></span>
+                                            <span class="zt-checkpoint-line zt-col-2"></span>
+                                            <span class="zt-checkpoint-line zt-col-3"></span>
+                                            <span class="zt-checkpoint-line zt-col-4"></span>
+                                            <span class="zt-checkpoint-line zt-col-5"></span>
+                                            <span class="zt-checkpoint-line zt-col-6 zt-checkpoint-short"></span>
 
-                                            <line x1="112" y1="76" x2="778" y2="76" class="security-line privileged-line"></line>
-                                            <polyline points="768,68 778,76 768,84" class="security-arrow privileged-line"></polyline>
+                                            <span class="zt-flow-line zt-line-priv"></span>
+                                            <span class="zt-flow-line zt-line-mission"></span>
+                                            <span class="zt-flow-line zt-line-user"></span>
 
-                                            <line x1="112" y1="166" x2="732" y2="166" class="security-line partner-line"></line>
-                                            <polyline points="722,158 732,166 722,174" class="security-arrow partner-line"></polyline>
+                                            <span class="zt-arrow zt-arrow-priv"></span>
+                                            <span class="zt-arrow zt-arrow-mission"></span>
+                                            <span class="zt-arrow zt-arrow-user"></span>
 
-                                            <line x1="112" y1="256" x2="872" y2="256" class="security-line enduser-line"></line>
-                                            <polyline points="862,248 872,256 862,264" class="security-arrow enduser-line"></polyline>
+                                            <span class="zt-node zt-node-priv zt-col-1"></span>
+                                            <span class="zt-node zt-node-priv zt-col-2"></span>
+                                            <span class="zt-node zt-node-priv zt-col-3"></span>
+                                            <span class="zt-node zt-node-priv zt-col-4"></span>
+                                            <span class="zt-node zt-node-priv zt-col-5"></span>
+                                            <span class="zt-node zt-node-priv zt-col-6"></span>
 
-                                            <line x1="838" y1="104" x2="838" y2="228" class="security-line service-branch"></line>
-                                            <line x1="838" y1="228" x2="728" y2="228" class="security-line service-branch"></line>
-                                            <line x1="838" y1="228" x2="934" y2="228" class="security-line service-branch"></line>
-                                        </svg>
+                                            <span class="zt-node zt-node-mission zt-col-1"></span>
+                                            <span class="zt-node zt-node-mission zt-col-2"></span>
+                                            <span class="zt-node zt-node-mission zt-col-3"></span>
+                                            <span class="zt-node zt-node-mission zt-col-4"></span>
+                                            <span class="zt-node zt-node-mission zt-col-5"></span>
+
+                                            <span class="zt-node zt-node-user zt-col-1"></span>
+                                            <span class="zt-node zt-node-user zt-col-2"></span>
+                                            <span class="zt-node zt-node-user zt-col-3"></span>
+                                            <span class="zt-node zt-node-user zt-col-4"></span>
+                                            <span class="zt-node zt-node-user zt-col-5"></span>
+
+                                            <span class="zt-connector-priv"></span>
+                                            <span class="zt-connector-mission"></span>
+                                            <span class="zt-connector-user"></span>
+                                        </div>
 
                                         <button type="button" class="security-hotspot path-node node-privileged start" data-security-detail="privileged" onclick="showSecurityDetail('privileged')">Privileged User</button>
                                         <button type="button" class="security-hotspot path-node node-partner start" data-security-detail="partner" onclick="showSecurityDetail('partner')">Mission Partner</button>
