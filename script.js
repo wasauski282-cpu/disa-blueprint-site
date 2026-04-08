@@ -138,12 +138,12 @@
             text: "Identity alone is not enough. Device posture, session state, request source, and environmental context are evaluated so risk can be factored into the access decision."
         },
         policy: {
-            title: "Policy Decision",
+            title: "Policy Decision Point",
             subtitle: "Apply zero trust decision logic",
             text: "This is the core zero trust decision point. Identity, device state, mission need, and user role are combined to determine whether access is allowed and what boundaries must apply."
         },
         segment: {
-            title: "Segmented Access",
+            title: "Policy Enforcement / Segmented Access",
             subtitle: "Permit only the approved path to the approved zone",
             text: "Approved requests are routed only into the specific service segment they are authorized to reach. Mission, enterprise, and management environments remain isolated even when they share infrastructure."
         },
@@ -153,7 +153,7 @@
             text: "Security does not stop once access is granted. Telemetry, audit events, alerts, and operational monitoring continue to assess the session for anomalies, misuse, or policy drift."
         },
         privileged_controls: {
-            title: "Privileged Access Controls",
+            title: "Privileged / Elevated Control",
             subtitle: "Additional gates for administrative actions",
             text: "Administrative access is subject to stronger approval and monitoring requirements. The privileged path adds extra checks and oversight before any request can reach management systems or high-impact control planes."
         },
