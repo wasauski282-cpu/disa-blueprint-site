@@ -1073,19 +1073,19 @@ li {
 }
 
 .zt-arrow-priv {
-    left: calc(var(--zt-line-end) + (var(--zt-output-col) * 0.065) - 12px);
+    left: calc(var(--zt-line-end) + (var(--zt-output-col) * 0.065) - 2px);
     top: var(--zt-row-1);
     color: #b91c1c;
 }
 
 .zt-arrow-mission {
-    left: calc(var(--zt-line-end) + (var(--zt-output-col) * 0.2) - 12px);
+    left: calc(var(--zt-line-end) + (var(--zt-output-col) * 0.2) - 2px);
     top: var(--zt-row-2);
     color: #7c3aed;
 }
 
 .zt-arrow-user {
-    left: calc(var(--zt-line-end) + (var(--zt-output-col) * 0.2) - 12px);
+    left: calc(var(--zt-line-end) + (var(--zt-output-col) * 0.2) - 2px);
     top: var(--zt-row-3);
     color: #2563eb;
 }
@@ -1179,12 +1179,12 @@ li {
 }
 
 .zt-management-arrow-mission {
-    left: calc(100% - (var(--zt-output-col) * 0.17));
+    left: calc(100% - (var(--zt-output-col) * 0.17) - 10px);
     top: var(--zt-row-2);
 }
 
 .zt-management-arrow-user {
-    left: calc(100% - (var(--zt-output-col) * 0.17));
+    left: calc(100% - (var(--zt-output-col) * 0.17) - 10px);
     top: var(--zt-row-3);
 }
 
