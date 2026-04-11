@@ -786,6 +786,146 @@ li {
 .network-theme h2 { color: #5b43b4; }
 .security-theme h2 { color: #9a3412; }
 .cloud-theme h2 { color: #0f766e; }
+.cloud-hero-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f5fffd 100%);
+}
+
+.cloud-visual-wrap {
+    margin-top: var(--space-4);
+}
+
+.cloud-visual {
+    background: linear-gradient(180deg, #f8fffd 0%, #effaf7 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    overflow: hidden;
+}
+
+.cloud-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.cloud-column-head {
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.cloud-left-head {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cloud-mid-head {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+.cloud-right-head {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.cloud-lanes {
+    display: grid;
+    gap: 14px;
+}
+
+.cloud-lane {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.cloud-lane::before,
+.cloud-lane::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.cloud-lane::before {
+    left: calc(33.333% - 9px);
+    width: 18px;
+    height: 3px;
+    background: linear-gradient(90deg, #34d399 0%, #14b8a6 100%);
+}
+
+.cloud-lane::after {
+    left: calc(66.666% - 9px);
+    width: 18px;
+    height: 3px;
+    background: linear-gradient(90deg, #14b8a6 0%, #60a5fa 100%);
+}
+
+.cloud-hotspot {
+    position: relative;
+    width: 100%;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
+.cloud-node {
+    min-height: 92px;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    z-index: 1;
+}
+
+.cloud-origin {
+    border: 1px solid #86efac;
+}
+
+.cloud-bridge {
+    border: 1px solid #5eead4;
+}
+
+.cloud-destination {
+    border: 1px solid #93c5fd;
+}
+
+.cloud-node:hover,
+.cloud-node:focus,
+.cloud-node.is-active {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.12);
+    outline: none;
+}
+
+.cloud-hotspot.is-active.cloud-origin {
+    border-color: #16a34a;
+}
+
+.cloud-hotspot.is-active.cloud-bridge {
+    border-color: #0f766e;
+}
+
+.cloud-hotspot.is-active.cloud-destination {
+    border-color: #1d4ed8;
+}
+
+.cloud-hotspot:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.18);
+    outline-offset: 3px;
+}
 .sustainability-theme h2 { color: #166534; }
 .resilience-theme h2 { color: #7c3aed; }
 .roadmap-theme h2 { color: #1d4ed8; }
@@ -1257,6 +1397,11 @@ li {
 }
 
 @media (max-width: 1150px) {
+    .cloud-columns,
+    .cloud-lane {
+        gap: 14px;
+    }
+
     .security-pathway {
         --zt-output-col: 180px;
     }
@@ -1273,6 +1418,25 @@ li {
 @media (max-width: 780px) {
     .security-visual {
         padding: 18px;
+    }
+
+    .cloud-columns,
+    .cloud-lane {
+        grid-template-columns: 1fr;
+    }
+
+    .cloud-columns {
+        margin-bottom: 18px;
+    }
+
+    .cloud-lane {
+        gap: 12px;
+        padding: 0;
+    }
+
+    .cloud-lane::before,
+    .cloud-lane::after {
+        display: none;
     }
 
     .security-pathway {

@@ -792,42 +792,72 @@
 
                 <!-- HYBRID CLOUD -->
                 <section id="hybrid-cloud" class="tab-panel cloud-theme" role="tabpanel" aria-labelledby="tab-hybrid-cloud" hidden>
-                    <div class="card">
+                    <div class="card cloud-hero-card">
                         <h2>Hybrid Cloud Operating Model</h2>
                         <p class="lede">
-                            The megacenters are designed as first-class nodes in DISA's DHMC and JWCC architectures,
-                            not as isolated on-prem enclaves.
+                            The blueprint treats the megacenters as hybrid operating nodes that can host, extend, and interconnect workloads across DISA facilities and JWCC-aligned cloud environments.
                         </p>
 
-                        <div class="grid grid-3">
-                            <div class="feature-card">
-                                <h3>Portable Workloads</h3>
-                                <p>Standardized network, identity, and management constructs allow workloads to move more cleanly across on-prem, edge, and cloud environments.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Cloud-Like Constructs</h3>
-                                <p>Tenancy, security groups, templates, and automation provide a more consistent operating experience regardless of placement.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Placement Flexibility</h3>
-                                <p>Mission owners can choose hosting placement based on classification, latency, sovereignty, and mission needs rather than tooling gaps.</p>
+                        <div class="cloud-visual-wrap">
+                            <div class="cloud-visual">
+                                <div class="cloud-columns">
+                                    <div class="cloud-column-head cloud-left-head">Megacenter Hosted</div>
+                                    <div class="cloud-column-head cloud-mid-head">Interconnect &amp; Shared Controls</div>
+                                    <div class="cloud-column-head cloud-right-head">JWCC / DHMC Cloud Services</div>
+                                </div>
+
+                                <div class="cloud-lanes" aria-label="Hybrid cloud operating lanes">
+                                    <div class="cloud-lane">
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-origin" data-cloud-detail="mission" onclick="showCloudDetail('mission')">Mission Workloads</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-bridge" data-cloud-detail="governance" onclick="showCloudDetail('governance')">Bounded Interconnect<br>Shared identity, policy, and transport</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-destination" data-cloud-detail="mission_cloud" onclick="showCloudDetail('mission_cloud')">Mission Extension<br>Selective cloud reach</button>
+                                    </div>
+
+                                    <div class="cloud-lane">
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-origin" data-cloud-detail="enterprise" onclick="showCloudDetail('enterprise')">Enterprise Platforms</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-bridge" data-cloud-detail="portable_ops" onclick="showCloudDetail('portable_ops')">Portable Operations<br>Common tooling and lifecycle</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-destination" data-cloud-detail="enterprise_cloud" onclick="showCloudDetail('enterprise_cloud')">Cloud Services<br>Elastic enterprise consumption</button>
+                                    </div>
+
+                                    <div class="cloud-lane">
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-origin" data-cloud-detail="data" onclick="showCloudDetail('data')">Data &amp; Analytics</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-bridge" data-cloud-detail="data_fabric" onclick="showCloudDetail('data_fabric')">Data Movement Controls<br>Replication and governed exchange</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-destination" data-cloud-detail="data_cloud" onclick="showCloudDetail('data_cloud')">Analytics Services<br>Cloud-adjacent processing</button>
+                                    </div>
+
+                                    <div class="cloud-lane">
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-origin" data-cloud-detail="ai" onclick="showCloudDetail('ai')">AI / Burst Compute</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-bridge" data-cloud-detail="placement" onclick="showCloudDetail('placement')">Placement Decision<br>Latency, classification, elasticity</button>
+                                        <button type="button" class="cloud-hotspot cloud-node cloud-destination" data-cloud-detail="ai_cloud" onclick="showCloudDetail('ai_cloud')">Burst / Specialized Capacity<br>JWCC-aligned expansion</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="accordion open">
-                            <button class="accordion-button" type="button" onclick="toggleAccordion(this)">
-                                <div>
-                                    <div class="accordion-title">Three service-consumption patterns in the blueprint</div>
-                                    <div class="accordion-subtitle">On-prem hosting, DCI, and off-prem cloud hosting</div>
-                                </div>
-                                <span class="chevron">▼</span>
-                            </button>
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><strong>Option A:</strong> Optimized DISA on-prem hosting and communications stack.</li>
-                                    <li><strong>Option B:</strong> Data Center Interconnect as a service for mission and partner environments.</li>
-                                    <li><strong>Option C:</strong> Off-prem cloud hosting for workloads better aligned to commercial cloud environments under JWCC.</li>
-                                </ul>
+                        <div class="detail-panel" id="cloud-detail-panel">
+                            <h3 id="cloud-detail-title">Placement Decision</h3>
+                            <p class="detail-sub" id="cloud-detail-subtitle">Mission owners choose the right operating location for the workload</p>
+                            <p id="cloud-detail-text">
+                                The hybrid model is not a blanket move to cloud. It provides a governed placement decision so workloads can remain in the megacenter, extend outward through shared controls, or consume JWCC-aligned services when that model is a better fit.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-4">
+                            <div class="feature-card">
+                                <h3>Placement Flexibility</h3>
+                                <p>Workloads can stay on-prem, extend through controlled interconnects, or consume cloud services based on mission fit.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Portable Operations</h3>
+                                <p>Identity, policy, automation, and lifecycle patterns stay consistent across DISA-hosted and cloud-connected environments.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Governed Exchange</h3>
+                                <p>Replication, transport, and service consumption remain bounded by shared controls rather than ad hoc connectivity.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Mission-Aware Hosting</h3>
+                                <p>Latency, classification, sovereignty, and elasticity drive placement decisions instead of a one-size-fits-all cloud posture.</p>
                             </div>
                         </div>
                     </div>

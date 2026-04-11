@@ -174,6 +174,69 @@
         }
     };
 
+    const cloudDetails = {
+        mission: {
+            title: "Mission Workloads",
+            subtitle: "Primary hosting remains inside the megacenter when mission constraints demand it",
+            text: "Mission systems that require tight control, deterministic connectivity, or bounded hosting can remain resident in the megacenter while still participating in the broader hybrid model."
+        },
+        governance: {
+            title: "Bounded Interconnect",
+            subtitle: "Shared identity, policy, and transport between hosting domains",
+            text: "The center lane represents the controlled exchange layer. Identity, policy, transport, and operational guardrails govern how workloads extend beyond the megacenter without losing control inheritance."
+        },
+        mission_cloud: {
+            title: "Mission Extension",
+            subtitle: "Selective cloud reach for approved mission use cases",
+            text: "Some mission capabilities may extend into connected cloud services when that improves flexibility or service delivery, but those paths remain bounded rather than broadly open."
+        },
+        enterprise: {
+            title: "Enterprise Platforms",
+            subtitle: "Shared business and platform services can span hosting locations",
+            text: "Enterprise platforms often benefit from consistent operations across megacenter and cloud environments. Standardized constructs help these services move or interoperate more cleanly."
+        },
+        portable_ops: {
+            title: "Portable Operations",
+            subtitle: "Common tooling and lifecycle models across hosting choices",
+            text: "The hybrid blueprint assumes that identity, automation, templates, and management patterns should work across both on-prem and connected cloud environments so teams do not operate two separate worlds."
+        },
+        enterprise_cloud: {
+            title: "Cloud Services",
+            subtitle: "Elastic enterprise consumption aligned to JWCC / DHMC connectivity",
+            text: "Enterprise workloads that benefit from flexibility or broader service consumption can use cloud-connected capacity while remaining tied into DISA-aligned controls and operating models."
+        },
+        data: {
+            title: "Data & Analytics",
+            subtitle: "Data services move only through governed exchange paths",
+            text: "Analytics and data platforms can remain local to the megacenter or interact with cloud-adjacent services, but movement and exposure should follow controlled replication and exchange paths."
+        },
+        data_fabric: {
+            title: "Data Movement Controls",
+            subtitle: "Replication and governed exchange across hosting environments",
+            text: "This lane represents the policy and transport controls that allow data to move deliberately between hosting zones without treating cloud connectivity as an unrestricted extension."
+        },
+        data_cloud: {
+            title: "Analytics Services",
+            subtitle: "Cloud-adjacent processing where it supports mission outcomes",
+            text: "Some analytics or storage-adjacent services may be better consumed from connected cloud environments, especially when scale or specialized service models matter."
+        },
+        ai: {
+            title: "AI / Burst Compute",
+            subtitle: "High-density or burst-oriented workloads start with placement choice",
+            text: "AI, burst compute, or other elastic workloads may run on-prem when locality matters or extend outward when scale and specialized capacity justify cloud-aligned hosting."
+        },
+        placement: {
+            title: "Placement Decision",
+            subtitle: "Latency, classification, sovereignty, and elasticity determine the right destination",
+            text: "The hybrid model is not a blanket move to cloud. It provides a governed placement decision so workloads can remain in the megacenter, extend outward through shared controls, or consume JWCC-aligned services when that model is a better fit."
+        },
+        ai_cloud: {
+            title: "Burst / Specialized Capacity",
+            subtitle: "JWCC-aligned expansion for elastic or specialized demand",
+            text: "Connected cloud services can absorb burst demand or provide specialized capacity, but only when the workload profile, data handling rules, and mission dependencies make that path appropriate."
+        }
+    };
+
     function activateTab(targetId) {
         tabButtons.forEach(function (button) {
             const isActive = button.getAttribute("data-tab") === targetId;
@@ -315,6 +378,23 @@
         });
     };
 
+    window.showCloudDetail = function (key) {
+        const detail = cloudDetails[key];
+        if (!detail) return;
+
+        const title = document.getElementById("cloud-detail-title");
+        const subtitle = document.getElementById("cloud-detail-subtitle");
+        const text = document.getElementById("cloud-detail-text");
+
+        if (title) title.textContent = detail.title;
+        if (subtitle) subtitle.textContent = detail.subtitle;
+        if (text) text.textContent = detail.text;
+
+        document.querySelectorAll(".cloud-hotspot").forEach(function (item) {
+            item.classList.toggle("is-active", item.getAttribute("data-cloud-detail") === key);
+        });
+    };
+
     document.querySelectorAll(".network-hotspot").forEach(function (item) {
         item.addEventListener("click", function () {
             const key = item.getAttribute("data-network-detail");
@@ -338,10 +418,20 @@
         });
     });
 
+    document.querySelectorAll(".cloud-hotspot").forEach(function (item) {
+        item.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            const key = item.getAttribute("data-cloud-detail");
+            if (key) showCloudDetail(key);
+        });
+    });
+
     activateTab("overview");
     showHubDetail("center");
     showSiteDetail("ogdn");
     showNetworkDetail("fabric");
     showSecurityDetail("policy");
+    showCloudDetail("placement");
 });
 
