@@ -300,6 +300,69 @@
         }
     };
 
+    const resilienceDetails = {
+        ogdn_cols: {
+            title: "OGDN / COLS Pairing",
+            subtitle: "The two primary sites form the core recovery backbone",
+            text: "OGDN and COLS provide the main paired-site continuity model in the blueprint. They can share critical service responsibility and support stronger failover options for workloads that need tighter continuity."
+        },
+        active_active: {
+            title: "Active / Active Pattern",
+            subtitle: "Critical services can stay available across a paired-site model",
+            text: "The blueprint does not require every workload to recover the same way. The most critical services can use active and synchronized deployments across paired sites when the mission justifies tighter continuity objectives."
+        },
+        mission_continuity: {
+            title: "Mission Continuity",
+            subtitle: "The goal is to reduce interruption for the highest-priority services",
+            text: "For the most important mission capabilities, continuity planning emphasizes low disruption and faster recovery by combining paired-site hosting with tighter replication and coordination patterns."
+        },
+        okc_swing: {
+            title: "OKC Swing Site",
+            subtitle: "OKC expands recovery options beyond a simple two-site pair",
+            text: "OKC acts as a swing and surge site that can absorb modernization pressure, temporary overflow, or additional disaster recovery support when the primary paired model needs reinforcement."
+        },
+        active_passive: {
+            title: "Active / Passive Pattern",
+            subtitle: "Reserved recovery capacity supports workloads with different cost and urgency profiles",
+            text: "Not every system needs active / active continuity. Many workloads are better served by a reserved-capacity model that keeps recovery possible without paying the operational cost of fully mirrored live delivery."
+        },
+        surge_recovery: {
+            title: "Surge Recovery",
+            subtitle: "Recovery, overflow, and modernization can share the swing-site concept",
+            text: "The swing-site role gives the architecture more flexibility during outage recovery, migration waves, and periods of elevated demand, which reduces the pressure on any single facility pair."
+        },
+        facility_controls: {
+            title: "Facility Controls",
+            subtitle: "Physical site design is part of the resilience story",
+            text: "Continuity starts with the facility itself. Redundant paths, reserve design margins, and sustained backup power help ensure logical recovery plans are built on stable infrastructure."
+        },
+        infra_resilience: {
+            title: "Infrastructure Resilience",
+            subtitle: "N+1, dual paths, and generator endurance strengthen the site layer",
+            text: "The facility design assumes dual distribution paths, N+1 redundancy, dual-corded racks, and at least 72 hours of generator runtime so that recovery planning is not undermined by weak site fundamentals."
+        },
+        operational_stability: {
+            title: "Operational Stability",
+            subtitle: "Reliable facilities make recovery plans more believable in practice",
+            text: "The outcome of site-level resilience is operational confidence. Strong facility controls reduce the chance that a local infrastructure issue cascades into a larger continuity event."
+        },
+        workload_tiers: {
+            title: "Workload Tiers",
+            subtitle: "Recovery patterns should reflect mission criticality and technical fit",
+            text: "The blueprint assumes workloads have different recovery needs. Some demand aggressive continuity targets, while others can recover through more economical patterns that still satisfy mission expectations."
+        },
+        recovery_targets: {
+            title: "Mission-Aligned Targets",
+            subtitle: "RTO and RPO are chosen by service criticality, not forced uniformly",
+            text: "Critical systems can target sub-hour RTO and roughly 15-minute RPO assumptions, while less critical systems can use more proportionate targets that match cost, complexity, and mission risk."
+        },
+        tiered_recovery: {
+            title: "Tiered Recovery",
+            subtitle: "The architecture avoids a one-size-fits-all failover rule",
+            text: "A tiered model lets the environment support multiple recovery patterns at once. That keeps the resilience posture realistic, scalable, and better aligned with the diversity of mission systems."
+        }
+    };
+
     function activateTab(targetId) {
         tabButtons.forEach(function (button) {
             const isActive = button.getAttribute("data-tab") === targetId;
@@ -475,6 +538,23 @@
         });
     };
 
+    window.showResilienceDetail = function (key) {
+        const detail = resilienceDetails[key];
+        if (!detail) return;
+
+        const title = document.getElementById("resilience-detail-title");
+        const subtitle = document.getElementById("resilience-detail-subtitle");
+        const text = document.getElementById("resilience-detail-text");
+
+        if (title) title.textContent = detail.title;
+        if (subtitle) subtitle.textContent = detail.subtitle;
+        if (text) text.textContent = detail.text;
+
+        document.querySelectorAll(".resilience-hotspot").forEach(function (item) {
+            item.classList.toggle("is-active", item.getAttribute("data-resilience-detail") === key);
+        });
+    };
+
     document.querySelectorAll(".network-hotspot").forEach(function (item) {
         item.addEventListener("click", function () {
             const key = item.getAttribute("data-network-detail");
@@ -516,6 +596,15 @@
         });
     });
 
+    document.querySelectorAll(".resilience-hotspot").forEach(function (item) {
+        item.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            const key = item.getAttribute("data-resilience-detail");
+            if (key) showResilienceDetail(key);
+        });
+    });
+
     activateTab("overview");
     showHubDetail("center");
     showSiteDetail("ogdn");
@@ -523,5 +612,6 @@
     showSecurityDetail("policy");
     showCloudDetail("placement");
     showSustainabilityDetail("thermal");
+    showResilienceDetail("active_active");
 });
 
