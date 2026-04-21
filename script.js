@@ -237,6 +237,69 @@
         }
     };
 
+    const sustainabilityDetails = {
+        cooling: {
+            title: "Cooling Plant",
+            subtitle: "Thermal infrastructure is designed for both general and high-density loads",
+            text: "The facility uses a mixed cooling strategy so standard workloads do not inherit the cost profile of dense compute unnecessarily, while high-density zones still have the thermal support they need."
+        },
+        thermal: {
+            title: "Thermal Optimization",
+            subtitle: "Cooling efficiency is designed into the facility, not added later",
+            text: "Closed-loop liquid-assisted support, zoned cooling, and selective free-cooling opportunities help the facility handle dense workloads while using energy more deliberately."
+        },
+        density: {
+            title: "High-Density Readiness",
+            subtitle: "AI, analytics, and burst racks can be supported without a full-site redesign",
+            text: "The sustainability model supports denser compute profiles where needed, allowing specialized zones to absorb AI or burst demand while the rest of the facility remains efficient for traditional loads."
+        },
+        power: {
+            title: "Power Train",
+            subtitle: "Electrical design supports resilience and efficient delivery together",
+            text: "Power infrastructure is not only sized for uptime. It is also monitored and managed so the facility can reduce unnecessary waste while still meeting mission reliability expectations."
+        },
+        load: {
+            title: "Load Intelligence",
+            subtitle: "Telemetry informs placement, maintenance, and operational tuning",
+            text: "Comprehensive monitoring and AI-assisted optimization can improve placement decisions, surface anomalies earlier, and help operators tune the environment before inefficiency becomes structural."
+        },
+        pue: {
+            title: "Lower PUE",
+            subtitle: "Energy waste is reduced across cooling, power, and placement decisions",
+            text: "The target PUE reflects coordinated design choices rather than a single technology. Cooling efficiency, electrical visibility, and better workload placement all contribute to the result."
+        },
+        water: {
+            title: "Water Stewardship",
+            subtitle: "Water use is treated as a design constraint, not an afterthought",
+            text: "The blueprint aims to limit ongoing water consumption through operating choices that favor closed-loop or low-consumption approaches wherever they fit the site and climate profile."
+        },
+        water_controls: {
+            title: "Water-Aware Controls",
+            subtitle: "Closed-loop and low-consumption operations reduce dependency on water-intensive cooling",
+            text: "Water efficiency comes from deliberate system choices and control logic that reduce unnecessary draw while still supporting thermal requirements for the workload mix."
+        },
+        wue: {
+            title: "Near-Zero WUE",
+            subtitle: "Operational water intensity stays intentionally low",
+            text: "Near-zero WUE is an outcome of the overall cooling and control strategy. The goal is to keep water use minimal even as compute density and mission demand increase over time."
+        },
+        renewables: {
+            title: "Renewable Sourcing",
+            subtitle: "Energy sourcing improves over time rather than waiting for a perfect end state",
+            text: "The plan uses phased renewable adoption so sustainability improvements can start early and continue to mature as procurement options, utility conditions, and site capabilities evolve."
+        },
+        procurement: {
+            title: "Energy Procurement",
+            subtitle: "Contracts and sourcing strategy are part of the operating model",
+            text: "Renewable progress depends on how energy is acquired as much as on-site design. Procurement strategy helps translate facility objectives into practical improvements over time."
+        },
+        renewable_growth: {
+            title: "Renewable Growth",
+            subtitle: "The roadmap moves from 20% at opening toward 50% by 2030",
+            text: "The renewable adoption path is phased to keep momentum realistic. Early targets establish progress at opening, and later milestones continue to improve the facility's sustainability profile."
+        }
+    };
+
     function activateTab(targetId) {
         tabButtons.forEach(function (button) {
             const isActive = button.getAttribute("data-tab") === targetId;
@@ -395,6 +458,23 @@
         });
     };
 
+    window.showSustainabilityDetail = function (key) {
+        const detail = sustainabilityDetails[key];
+        if (!detail) return;
+
+        const title = document.getElementById("sustainability-detail-title");
+        const subtitle = document.getElementById("sustainability-detail-subtitle");
+        const text = document.getElementById("sustainability-detail-text");
+
+        if (title) title.textContent = detail.title;
+        if (subtitle) subtitle.textContent = detail.subtitle;
+        if (text) text.textContent = detail.text;
+
+        document.querySelectorAll(".sustainability-hotspot").forEach(function (item) {
+            item.classList.toggle("is-active", item.getAttribute("data-sustainability-detail") === key);
+        });
+    };
+
     document.querySelectorAll(".network-hotspot").forEach(function (item) {
         item.addEventListener("click", function () {
             const key = item.getAttribute("data-network-detail");
@@ -427,11 +507,21 @@
         });
     });
 
+    document.querySelectorAll(".sustainability-hotspot").forEach(function (item) {
+        item.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            const key = item.getAttribute("data-sustainability-detail");
+            if (key) showSustainabilityDetail(key);
+        });
+    });
+
     activateTab("overview");
     showHubDetail("center");
     showSiteDetail("ogdn");
     showNetworkDetail("fabric");
     showSecurityDetail("policy");
     showCloudDetail("placement");
+    showSustainabilityDetail("thermal");
 });
 

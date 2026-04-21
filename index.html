@@ -866,43 +866,91 @@
                 <!-- SUSTAINABILITY -->
                 <section id="sustainability" class="tab-panel sustainability-theme" role="tabpanel" aria-labelledby="tab-sustainability" hidden>
                     <div class="grid grid-4">
-                        <div class="metric-card">
+                        <div class="metric-card sustainability-metric">
                             <div class="metric-value">1.3+</div>
                             <div class="metric-label">PUE Target</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card sustainability-metric">
                             <div class="metric-value">Near-Zero</div>
                             <div class="metric-label">WUE Objective</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card sustainability-metric">
                             <div class="metric-value">20%</div>
                             <div class="metric-label">Renewables at Opening</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card sustainability-metric">
                             <div class="metric-value">50%</div>
                             <div class="metric-label">Renewables by 2030</div>
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card sustainability-hero-card">
                         <h2>Sustainability and Efficiency</h2>
                         <p class="lede">
-                            The design targets hyperscaler-class efficiency through modular cooling, liquid-assisted high-density support,
-                            AI-assisted optimization, and progressive renewable energy adoption.
+                            The blueprint treats sustainability as an operating discipline: efficient cooling, intelligent power use,
+                            careful water stewardship, and phased renewable adoption all feed measurable facility outcomes.
                         </p>
 
-                        <div class="grid grid-3">
+                        <div class="sustainability-visual-wrap">
+                            <div class="sustainability-visual">
+                                <div class="sustainability-columns">
+                                    <div class="sustainability-column-head sustainability-left-head">Facility Systems</div>
+                                    <div class="sustainability-column-head sustainability-mid-head">Optimization Layer</div>
+                                    <div class="sustainability-column-head sustainability-right-head">Efficiency Outcome</div>
+                                </div>
+
+                                <div class="sustainability-lanes" aria-label="Sustainability operating lanes">
+                                    <div class="sustainability-lane">
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-origin" data-sustainability-detail="cooling" onclick="showSustainabilityDetail('cooling')">Cooling Plant</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-bridge" data-sustainability-detail="thermal" onclick="showSustainabilityDetail('thermal')">Thermal Optimization<br>Liquid assist, zoning, and free-cooling logic</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-destination" data-sustainability-detail="density" onclick="showSustainabilityDetail('density')">High-Density Readiness<br>Support for AI and burst racks</button>
+                                    </div>
+
+                                    <div class="sustainability-lane">
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-origin" data-sustainability-detail="power" onclick="showSustainabilityDetail('power')">Power Train</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-bridge" data-sustainability-detail="load" onclick="showSustainabilityDetail('load')">Load Intelligence<br>Telemetry, placement, and predictive tuning</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-destination" data-sustainability-detail="pue" onclick="showSustainabilityDetail('pue')">Lower PUE<br>Reduced waste across the facility stack</button>
+                                    </div>
+
+                                    <div class="sustainability-lane">
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-origin" data-sustainability-detail="water" onclick="showSustainabilityDetail('water')">Water Stewardship</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-bridge" data-sustainability-detail="water_controls" onclick="showSustainabilityDetail('water_controls')">Water-Aware Controls<br>Closed-loop and low-consumption operating choices</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-destination" data-sustainability-detail="wue" onclick="showSustainabilityDetail('wue')">Near-Zero WUE<br>Minimized operational water use</button>
+                                    </div>
+
+                                    <div class="sustainability-lane">
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-origin" data-sustainability-detail="renewables" onclick="showSustainabilityDetail('renewables')">Renewable Sourcing</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-bridge" data-sustainability-detail="procurement" onclick="showSustainabilityDetail('procurement')">Energy Procurement<br>Phased adoption and contract alignment</button>
+                                        <button type="button" class="sustainability-hotspot sustainability-node sustainability-destination" data-sustainability-detail="renewable_growth" onclick="showSustainabilityDetail('renewable_growth')">Renewable Growth<br>20% at opening, 50% by 2030</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-panel" id="sustainability-detail-panel">
+                            <h3 id="sustainability-detail-title">Thermal Optimization</h3>
+                            <p class="detail-sub" id="sustainability-detail-subtitle">Cooling efficiency is designed into the facility, not added later</p>
+                            <p id="sustainability-detail-text">
+                                The sustainability model starts with how heat is managed. Closed-loop liquid-assisted support, zoned cooling, and selective free-cooling opportunities help the facility handle dense workloads while using energy more deliberately.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-4">
                             <div class="feature-card">
-                                <h3>Cooling Strategy</h3>
-                                <p>Closed-loop liquid cooling for high-density pods, efficient air-assisted systems for general workloads, and free-cooling opportunities where feasible.</p>
+                                <h3>Efficiency by Design</h3>
+                                <p>Cooling, power, and water objectives are built into the architecture rather than treated as later operational tuning.</p>
                             </div>
                             <div class="feature-card">
-                                <h3>Power Optimization</h3>
-                                <p>Comprehensive monitoring and AI-assisted optimization support better load placement, predictive maintenance, and lower energy waste.</p>
+                                <h3>Operational Telemetry</h3>
+                                <p>Comprehensive monitoring supports placement decisions, predictive maintenance, and continuous efficiency improvement.</p>
                             </div>
                             <div class="feature-card">
-                                <h3>Facility Objectives</h3>
-                                <p>Targets include LEED Gold or better, near-zero WUE objectives, and phased renewable adoption over time.</p>
+                                <h3>High-Density Support</h3>
+                                <p>Thermal and electrical design choices prepare the sites for denser compute profiles without defaulting to inefficient overprovisioning.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Phased Sustainability</h3>
+                                <p>Renewable adoption and facility objectives progress over time so the operating model can improve without waiting for a single future milestone.</p>
                             </div>
                         </div>
                     </div>
