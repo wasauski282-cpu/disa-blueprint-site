@@ -31,7 +31,6 @@
                 <button type="button" class="tab-button" id="tab-security" data-tab="security" role="tab" aria-controls="security" aria-selected="false">Security</button>
                 <button type="button" class="tab-button" id="tab-hybrid-cloud" data-tab="hybrid-cloud" role="tab" aria-controls="hybrid-cloud" aria-selected="false">Hybrid Cloud</button>
                 <button type="button" class="tab-button" id="tab-sustainability" data-tab="sustainability" role="tab" aria-controls="sustainability" aria-selected="false">Sustainability</button>
-                <button type="button" class="tab-button" id="tab-disaster-recovery" data-tab="disaster-recovery" role="tab" aria-controls="disaster-recovery" aria-selected="false">DR & Resilience</button>
                 <button type="button" class="tab-button" id="tab-migration" data-tab="migration" role="tab" aria-controls="migration" aria-selected="false">Migration Roadmap</button>
                 <button type="button" class="tab-button" id="tab-comparison" data-tab="comparison" role="tab" aria-controls="comparison" aria-selected="false">Legacy vs Modern</button>
                 <button type="button" class="tab-button" id="tab-references" data-tab="references" role="tab" aria-controls="references" aria-selected="false">References</button>
@@ -295,6 +294,95 @@
                                     <li>Reliable power with potential for multiple feeds and future growth capacity.</li>
                                     <li>Proximity to major fiber routes and carrier points of presence with diverse physical paths.</li>
                                     <li>Ability to support security zoning, SCIF-capable areas, and phased expansion.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sites-resilience-card">
+                        <div class="sites-resilience-head">
+                            <div>
+                                <div class="sites-resilience-kicker">Resilience Overlay</div>
+                                <h2>How The Three Sites Work Together For Recovery</h2>
+                            </div>
+                            <p>The location model already implies the continuity pattern: OGDN and COLS anchor the primary paired backbone, while OKC acts as swing capacity for surge, modernization overlap, and additional disaster recovery support.</p>
+                        </div>
+
+                        <div class="grid grid-3 sites-resilience-grid">
+                            <div class="feature-card sites-resilience-feature">
+                                <h3>Primary Pair</h3>
+                                <p>OGDN and COLS provide the main east-west continuity backbone for the most critical services.</p>
+                            </div>
+                            <div class="feature-card sites-resilience-feature">
+                                <h3>Swing Capacity</h3>
+                                <p>OKC adds a third-site option for overflow, migration support, and staged recovery activation.</p>
+                            </div>
+                            <div class="feature-card sites-resilience-feature">
+                                <h3>Tiered Recovery</h3>
+                                <p>Workloads can use active/active or active/passive recovery models depending on mission priority and technical fit.</p>
+                            </div>
+                        </div>
+
+                        <div class="sites-resilience-rulebox">
+                            <div class="sites-resilience-rule-title">Continuity Rules</div>
+                            <ul>
+                                <li>Primary continuity is anchored on the OGDN and COLS pair.</li>
+                                <li>OKC supports surge capacity, modernization overlap, and additional DR support.</li>
+                                <li>Facility resilience and workload criticality jointly determine the playbook.</li>
+                                <li>Critical services can target sub-hour RTO and roughly 15-minute RPO assumptions.</li>
+                            </ul>
+                        </div>
+
+                        <div class="resilience-playbooks sites-resilience-playbooks">
+                            <div class="resilience-playbook-group">
+                                <div class="resilience-group-label">Recovery Playbooks</div>
+                                <div class="pill-row resilience-pill-row">
+                                    <button type="button" class="resilience-hotspot resilience-pill" data-resilience-detail="active_active" onclick="showResilienceDetail('active_active')">Active / Active</button>
+                                    <button type="button" class="resilience-hotspot resilience-pill" data-resilience-detail="active_passive" onclick="showResilienceDetail('active_passive')">Active / Passive</button>
+                                    <button type="button" class="resilience-hotspot resilience-pill" data-resilience-detail="recovery_targets" onclick="showResilienceDetail('recovery_targets')">Mission Targets</button>
+                                    <button type="button" class="resilience-hotspot resilience-pill" data-resilience-detail="workload_tiers" onclick="showResilienceDetail('workload_tiers')">Workload Tiers</button>
+                                </div>
+                            </div>
+
+                            <div class="resilience-playbook-group">
+                                <div class="resilience-group-label">Operational Outcomes</div>
+                                <div class="resilience-outcome-grid">
+                                    <button type="button" class="resilience-hotspot resilience-outcome-card" data-resilience-detail="surge_recovery" onclick="showResilienceDetail('surge_recovery')">
+                                        <strong>Surge Recovery</strong>
+                                        <span>Overflow, modernization, and contingency support</span>
+                                    </button>
+                                    <button type="button" class="resilience-hotspot resilience-outcome-card" data-resilience-detail="infra_resilience" onclick="showResilienceDetail('infra_resilience')">
+                                        <strong>Infrastructure Resilience</strong>
+                                        <span>N+1, dual paths, and long-duration backup</span>
+                                    </button>
+                                    <button type="button" class="resilience-hotspot resilience-outcome-card" data-resilience-detail="operational_stability" onclick="showResilienceDetail('operational_stability')">
+                                        <strong>Operational Stability</strong>
+                                        <span>Higher confidence in site-level continuity</span>
+                                    </button>
+                                    <button type="button" class="resilience-hotspot resilience-outcome-card" data-resilience-detail="tiered_recovery" onclick="showResilienceDetail('tiered_recovery')">
+                                        <strong>Tiered Recovery</strong>
+                                        <span>Continuity patterns matched to mission need</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resilience-bottom-grid sites-resilience-bottom-grid">
+                            <div class="detail-panel" id="resilience-detail-panel">
+                                <h3 id="resilience-detail-title">Active / Active Pattern</h3>
+                                <p class="detail-sub" id="resilience-detail-subtitle">Critical services can stay available across a paired-site model</p>
+                                <p id="resilience-detail-text">
+                                    The blueprint does not require every workload to recover the same way. The most critical services can use active and synchronized deployments across paired sites when the mission justifies tighter continuity objectives.
+                                </p>
+                            </div>
+
+                            <div class="resilience-summary">
+                                <div class="resilience-summary-title">Recovery Fit</div>
+                                <ul class="resilience-rule-list">
+                                    <li>Use active / active for the most continuity-sensitive services.</li>
+                                    <li>Use active / passive where reserved capacity is more practical than full live mirroring.</li>
+                                    <li>Use OKC when surge, migration overlap, or staged activation improves the recovery posture.</li>
+                                    <li>Match the playbook to workload tier, mission risk, and facility conditions.</li>
                                 </ul>
                             </div>
                         </div>
@@ -956,90 +1044,70 @@
                     </div>
                 </section>
 
-                <!-- DR -->
-                <section id="disaster-recovery" class="tab-panel resilience-theme" role="tabpanel" aria-labelledby="tab-disaster-recovery" hidden>
-                    <div class="card">
-                        <h2>Disaster Recovery &amp; Resilience</h2>
-                        <p class="lede">
-                            Resilience combines Tier III facility design with logical workload pairing across sites.
-                            The result is stronger continuity without requiring every workload to use the same failover pattern.
-                        </p>
-
-                        <div class="grid grid-3">
-                            <div class="feature-card">
-                                <h3>Facility Resilience</h3>
-                                <p>Dual distribution paths, N+1 redundancy, dual-corded racks, and at least 72 hours of on-site generator runtime.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Logical Resilience</h3>
-                                <p>Workloads can use active/active or active/passive deployment patterns depending on mission criticality and technical fit.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Recovery Targets</h3>
-                                <p>Critical systems target sub-hour RTO and RPO on the order of 15 minutes under the design assumptions.</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion open">
-                            <button class="accordion-button" type="button" onclick="toggleAccordion(this)">
-                                <div>
-                                    <div class="accordion-title">Site pairing model</div>
-                                    <div class="accordion-subtitle">How the three sites function together</div>
-                                </div>
-                                <span class="chevron">▼</span>
-                            </button>
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>OGDN and COLS form the primary paired backbone.</li>
-                                    <li>OKC acts as the swing site for surge, modernization, and additional DR support.</li>
-                                    <li>Workload placement and recovery patterns are mission-specific rather than one-size-fits-all.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <!-- MIGRATION -->
                 <section id="migration" class="tab-panel roadmap-theme" role="tabpanel" aria-labelledby="tab-migration" hidden>
-                    <div class="card">
+                    <div class="card roadmap-hero-card">
                         <h2>Migration Roadmap</h2>
                         <p class="lede">
-                            The roadmap is structured as a phased build-out and migration sequence. Click any phase to expand the details.
+                            The program moves in deliberate waves: establish the blueprint, stand up the first production capacity, expand across all three sites, then optimize the estate once the new operating model is stable.
                         </p>
 
-                        <div class="roadmap-strip">
-                            <div class="roadmap-chip">
+                        <div class="roadmap-board-strip" aria-label="Migration roadmap phases">
+                            <button type="button" class="roadmap-chip roadmap-chip-phase1" onclick="toggleTimeline(document.querySelectorAll('.timeline-phase .accordion-button')[0])">
                                 <div class="year">Phase 1</div>
                                 <div class="desc">0&ndash;12 months</div>
-                            </div>
-                            <div class="roadmap-chip">
+                                <div class="roadmap-chip-note">Strategy and preparation</div>
+                            </button>
+                            <button type="button" class="roadmap-chip roadmap-chip-phase2" onclick="toggleTimeline(document.querySelectorAll('.timeline-phase .accordion-button')[1])">
                                 <div class="year">Phase 2</div>
                                 <div class="desc">12&ndash;24 months</div>
-                            </div>
-                            <div class="roadmap-chip">
+                                <div class="roadmap-chip-note">First production build</div>
+                            </button>
+                            <button type="button" class="roadmap-chip roadmap-chip-phase3" onclick="toggleTimeline(document.querySelectorAll('.timeline-phase .accordion-button')[2])">
                                 <div class="year">Phase 3</div>
                                 <div class="desc">24&ndash;48 months</div>
-                            </div>
-                            <div class="roadmap-chip">
+                                <div class="roadmap-chip-note">Multi-site migration waves</div>
+                            </button>
+                            <button type="button" class="roadmap-chip roadmap-chip-phase4" onclick="toggleTimeline(document.querySelectorAll('.timeline-phase .accordion-button')[3])">
                                 <div class="year">Phase 4</div>
                                 <div class="desc">Optimization / future growth</div>
+                                <div class="roadmap-chip-note">Scale and refine</div>
+                            </button>
+                        </div>
+
+                        <div class="roadmap-track-grid">
+                            <div class="roadmap-track-card">
+                                <div class="roadmap-track-label">Delivery Track</div>
+                                <h3>Facilities and Capacity</h3>
+                                <p>Prepare sites, build production-ready halls, and expand pods as migration demand increases.</p>
+                            </div>
+                            <div class="roadmap-track-card">
+                                <div class="roadmap-track-label">Delivery Track</div>
+                                <h3>Platform and Operations</h3>
+                                <p>Stand up the common compute, storage, network, security, automation, and monitoring baseline.</p>
+                            </div>
+                            <div class="roadmap-track-card">
+                                <div class="roadmap-track-label">Delivery Track</div>
+                                <h3>Migration and Adoption</h3>
+                                <p>Inventory workloads, group migration waves, and refine playbooks as early lessons shape later moves.</p>
                             </div>
                         </div>
 
-                        <div class="timeline">
-                            <div class="timeline-phase open">
-                                <button class="accordion-button" type="button" onclick="toggleTimeline(this)">
-                                    <div class="timeline-header">
+                        <div class="timeline roadmap-program-board">
+                            <div class="timeline-phase roadmap-phase-card roadmap-phase-card-1 open">
+                                <button class="accordion-button roadmap-phase-button" type="button" onclick="toggleTimeline(this)">
+                                    <div class="timeline-header roadmap-phase-header">
                                         <div><span class="timeline-badge">Phase 1</span></div>
                                         <div>
                                             <div class="accordion-title">Planning, design, and site preparation</div>
                                             <div class="accordion-subtitle">Finalize strategy, site roles, reference design, and migration grouping</div>
                                         </div>
+                                        <div class="roadmap-phase-state">Program setup</div>
                                         <span class="chevron">▼</span>
                                     </div>
                                 </button>
                                 <div class="timeline-phase-body">
-                                    <ul>
+                                    <ul class="roadmap-checklist">
                                         <li>Finalize the three-CONUS consolidation strategy and confirm site roles and capacity targets.</li>
                                         <li>Complete detailed architecture and engineering for pod layouts, power/cooling blocks, and security zoning.</li>
                                         <li>Conduct site-specific assessments for facilities, utilities, fiber diversity, and expansion options.</li>
@@ -1048,19 +1116,20 @@
                                 </div>
                             </div>
 
-                            <div class="timeline-phase">
-                                <button class="accordion-button" type="button" onclick="toggleTimeline(this)">
-                                    <div class="timeline-header">
+                            <div class="timeline-phase roadmap-phase-card roadmap-phase-card-2">
+                                <button class="accordion-button roadmap-phase-button" type="button" onclick="toggleTimeline(this)">
+                                    <div class="timeline-header roadmap-phase-header">
                                         <div><span class="timeline-badge">Phase 2</span></div>
                                         <div>
                                             <div class="accordion-title">Core construction and initial build-out</div>
                                             <div class="accordion-subtitle">Establish first production-ready capacity and baseline tooling</div>
                                         </div>
+                                        <div class="roadmap-phase-state">First go-live</div>
                                         <span class="chevron">▼</span>
                                     </div>
                                 </button>
                                 <div class="timeline-phase-body">
-                                    <ul>
+                                    <ul class="roadmap-checklist">
                                         <li>Construct or retrofit the first megacenter halls and supporting MEP infrastructure.</li>
                                         <li>Implement modular power and cooling blocks sized for approximately 10 MW IT load with Tier III maintainability.</li>
                                         <li>Deploy core network, security, compute, and storage infrastructure based on standardized reference builds.</li>
@@ -1069,19 +1138,20 @@
                                 </div>
                             </div>
 
-                            <div class="timeline-phase">
-                                <button class="accordion-button" type="button" onclick="toggleTimeline(this)">
-                                    <div class="timeline-header">
+                            <div class="timeline-phase roadmap-phase-card roadmap-phase-card-3">
+                                <button class="accordion-button roadmap-phase-button" type="button" onclick="toggleTimeline(this)">
+                                    <div class="timeline-header roadmap-phase-header">
                                         <div><span class="timeline-badge">Phase 3</span></div>
                                         <div>
                                             <div class="accordion-title">Multi-site build-out and progressive migration</div>
                                             <div class="accordion-subtitle">Expand all three megacenters and execute migration waves</div>
                                         </div>
+                                        <div class="roadmap-phase-state">Wave execution</div>
                                         <span class="chevron">▼</span>
                                     </div>
                                 </button>
                                 <div class="timeline-phase-body">
-                                    <ul>
+                                    <ul class="roadmap-checklist">
                                         <li>Expand capacity at OGDN, OKC, and COLS with additional pods and supporting utility capacity.</li>
                                         <li>Execute migration waves from legacy sites in a deliberate sequence.</li>
                                         <li>Refine runbooks, operational patterns, and support models using early migration lessons learned.</li>
@@ -1090,19 +1160,20 @@
                                 </div>
                             </div>
 
-                            <div class="timeline-phase">
-                                <button class="accordion-button" type="button" onclick="toggleTimeline(this)">
-                                    <div class="timeline-header">
+                            <div class="timeline-phase roadmap-phase-card roadmap-phase-card-4">
+                                <button class="accordion-button roadmap-phase-button" type="button" onclick="toggleTimeline(this)">
+                                    <div class="timeline-header roadmap-phase-header">
                                         <div><span class="timeline-badge">Phase 4</span></div>
                                         <div>
                                             <div class="accordion-title">Optimization and future growth</div>
                                             <div class="accordion-subtitle">Operational refinement, technology evolution, and additional scale</div>
                                         </div>
+                                        <div class="roadmap-phase-state">Estate optimization</div>
                                         <span class="chevron">▼</span>
                                     </div>
                                 </button>
                                 <div class="timeline-phase-body">
-                                    <ul>
+                                    <ul class="roadmap-checklist">
                                         <li>Continue scaling pod capacity as demand grows.</li>
                                         <li>Increase support for advanced AI/ML, data-centric, and high-density workloads.</li>
                                         <li>Refine sustainability, automation, and operational efficiency over time.</li>
@@ -1116,71 +1187,177 @@
 
                 <!-- COMPARISON -->
                 <section id="comparison" class="tab-panel comparison-theme" role="tabpanel" aria-labelledby="tab-comparison" hidden>
-                    <div class="card">
+                    <div class="card comparison-hero-card">
                         <h2>Legacy vs Modern</h2>
-                        <table class="comparison-table">
-                            <thead>
-                                <tr>
-                                    <th>Dimension</th>
-                                    <th>Legacy Environment</th>
-                                    <th>Target Megacenter Model</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Site Footprint</strong></td>
-                                    <td>Distributed and heterogeneous across multiple facilities</td>
-                                    <td>Consolidated into three standardized CONUS megacenters</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Growth Model</strong></td>
-                                    <td>Incremental expansion often constrained by facility limitations</td>
-                                    <td>Modular pod-based growth with planned power and cooling expansion</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Operations</strong></td>
-                                    <td>More fragmented tooling and variable practices</td>
-                                    <td>Standardized runbooks, automation, DCIM, and centralized visibility</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Security</strong></td>
-                                    <td>Less consistent inheritance and segmentation across environments</td>
-                                    <td>Zero-trust-by-default with stronger platform-level control inheritance</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Cloud Alignment</strong></td>
-                                    <td>On-prem and cloud often treated as separate operating models</td>
-                                    <td>Common patterns across on-prem, interconnect, edge, and cloud hosting</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Resilience</strong></td>
-                                    <td>Mixed DR patterns and uneven site capabilities</td>
-                                    <td>Stronger paired-site model with OKC swing capacity and high-bandwidth inter-site support</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Future Workloads</strong></td>
-                                    <td>More limited support for high-density and data-centric missions</td>
-                                    <td>Prepared for AI/ML, GPU-dense pods, and multi-petabyte data operations</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <p class="lede">
+                            This is not just a facility refresh. The blueprint shifts DISA from a fragmented estate toward a standardized operating model designed for resilience, automation, cloud alignment, and future high-density workloads.
+                        </p>
+
+                        <div class="comparison-summary-grid">
+                            <div class="comparison-summary-card comparison-summary-legacy">
+                                <div class="comparison-summary-kicker">Legacy</div>
+                                <h3>Fragmented estate</h3>
+                                <p>Different facilities, different tooling, uneven resilience, and more variability in how infrastructure is delivered and operated.</p>
+                            </div>
+                            <div class="comparison-summary-card comparison-summary-target">
+                                <div class="comparison-summary-kicker">Target</div>
+                                <h3>Standardized megacenter model</h3>
+                                <p>Three repeatable CONUS sites with common patterns for build, security, operations, resilience, and workload growth.</p>
+                            </div>
+                        </div>
+
+                        <div class="comparison-board" aria-label="Legacy versus target comparison board">
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Site Footprint</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>Distributed and heterogeneous across multiple facilities.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Consolidated into three standardized CONUS megacenters.</p>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Growth Model</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>Incremental expansion often constrained by facility limitations.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Modular pod-based growth with planned power and cooling expansion.</p>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Operations</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>More fragmented tooling and variable practices.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Standardized runbooks, automation, DCIM, and centralized visibility.</p>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Security</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>Less consistent inheritance and segmentation across environments.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Zero-trust-by-default with stronger platform-level control inheritance.</p>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Cloud Alignment</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>On-prem and cloud often treated as separate operating models.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Common patterns across on-prem, interconnect, edge, and cloud hosting.</p>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Resilience</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>Mixed DR patterns and uneven site capabilities.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Stronger paired-site model with OKC swing capacity and high-bandwidth inter-site support.</p>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-dimension">Future Workloads</div>
+                                <div class="comparison-side comparison-side-legacy">
+                                    <span class="comparison-label">Legacy</span>
+                                    <p>More limited support for high-density and data-centric missions.</p>
+                                </div>
+                                <div class="comparison-arrow" aria-hidden="true">→</div>
+                                <div class="comparison-side comparison-side-target">
+                                    <span class="comparison-label">Target</span>
+                                    <p>Prepared for AI/ML, GPU-dense pods, and multi-petabyte data operations.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <!-- REFERENCES -->
                 <section id="references" class="tab-panel references-theme" role="tabpanel" aria-labelledby="tab-references" hidden>
-                    <div class="card">
+                    <div class="card references-hero-card">
                         <h2>References</h2>
                         <p class="lede">
-                            Primary references used to inform the content and terminology in this site.
+                            The site content is grounded in the blueprint itself plus the adjacent strategy, hosting, security, and facility guidance that shapes how the model is described.
                         </p>
-                        <ol>
-                            <li><strong>DISA Data Center Blueprint v2</strong> &mdash; primary architectural source.</li>
-                            <li><strong>DISA Next 2025&ndash;2029</strong> &mdash; strategic alignment referenced within the blueprint.</li>
-                            <li><strong>J9 Hosting and Compute strategy references</strong> &mdash; operating model and service-alignment context referenced within the blueprint.</li>
-                            <li><strong>Security and compliance frameworks cited in the blueprint</strong> &mdash; including DoD zero trust direction, STIG practices, and FIPS 140-3 for cryptography.</li>
-                            <li><strong>Facility and efficiency objectives cited in the blueprint</strong> &mdash; including Tier III standards, PUE targets, LEED Gold intent, and renewable-energy trajectory.</li>
-                        </ol>
+
+                        <div class="references-intro-grid">
+                            <div class="references-intro-card">
+                                <div class="references-kicker">Primary Source</div>
+                                <h3>Blueprint-driven</h3>
+                                <p>The DISA Data Center Blueprint remains the core architectural source for the three-site model, pod concept, resilience posture, and platform design choices.</p>
+                            </div>
+                            <div class="references-intro-card">
+                                <div class="references-kicker">Supporting Sources</div>
+                                <h3>Strategy and control context</h3>
+                                <p>Adjacent strategy, hosting, security, and facility references help explain how the blueprint aligns to broader DISA and DoD direction.</p>
+                            </div>
+                        </div>
+
+                        <div class="references-register">
+                            <div class="reference-card">
+                                <div class="reference-type">Architecture</div>
+                                <h3>DISA Data Center Blueprint v2</h3>
+                                <p>Primary architectural source for the megacenter model, pod-based growth, site pairing, platform standardization, and overall operating concept.</p>
+                                <div class="reference-impact">Informed: overview, locations, capacity, network, resilience, and migration framing.</div>
+                            </div>
+
+                            <div class="reference-card">
+                                <div class="reference-type">Strategy</div>
+                                <h3>DISA Next 2025&ndash;2029</h3>
+                                <p>Strategic alignment reference used to connect the site architecture to broader modernization, enterprise service delivery, and future operating direction.</p>
+                                <div class="reference-impact">Informed: transformation language, modernization rationale, and future-state positioning.</div>
+                            </div>
+
+                            <div class="reference-card">
+                                <div class="reference-type">Hosting</div>
+                                <h3>J9 Hosting and Compute Strategy References</h3>
+                                <p>Operating-model and service-alignment material that helps explain how standardized hosting, workload placement, and platform services fit together.</p>
+                                <div class="reference-impact">Informed: hosting model, migration sequencing, and cloud-adjacent service framing.</div>
+                            </div>
+
+                            <div class="reference-card">
+                                <div class="reference-type">Security</div>
+                                <h3>Security and Compliance Frameworks Cited in the Blueprint</h3>
+                                <p>Includes DoD zero trust direction, STIG-aligned practices, and FIPS 140-3 cryptographic expectations referenced through the source material.</p>
+                                <div class="reference-impact">Informed: zero trust narrative, control inheritance, segmentation, and compliance language.</div>
+                            </div>
+
+                            <div class="reference-card">
+                                <div class="reference-type">Facility</div>
+                                <h3>Facility and Efficiency Objectives Cited in the Blueprint</h3>
+                                <p>Includes Tier III standards, PUE objectives, LEED Gold intent, near-zero WUE goals, and renewable-energy trajectory assumptions.</p>
+                                <div class="reference-impact">Informed: sustainability, capacity planning assumptions, and facility design posture.</div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
